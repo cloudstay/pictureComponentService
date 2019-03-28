@@ -24,5 +24,5 @@ coverage
 build/
 dist/
 
-
-database/aswS3/config.js
+#AWS Config keys#
+config.js

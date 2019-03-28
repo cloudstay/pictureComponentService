@@ -1,17 +1,46 @@
 {
-  "name": "",
+  "name": "cloudstayphotocarousel",
   "version": "",
   "description": "",
-  "author": "",
-  "license": "",
+  "author": "Sutton",
+  "license": "UNLICENSED",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
+    "tester": "node ./client/temp.js"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "nodemon": "^1.18.10",
+    "react": "^16.8.6",
+    "react-redux": "^6.0.1",
+    "reactdom": "^2.0.0",
+    "redux": "^4.0.1"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "aws-sdk": "^2.430.0",
+    "babel-loader": "^8.0.5",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "faker": "^4.1.0",
+    "jest": "^24.5.0",
+    "mongodb": "^3.2.2",
+    "mongoose": "^5.4.20",
+    "puppeteer": "^1.13.0",
+    "puppeteer-core": "^1.13.0",
+    "redux-devtools": "^3.5.0",
+    "uuid": "^3.3.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   }
 }

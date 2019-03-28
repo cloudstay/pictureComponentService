@@ -8,7 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "tester": "node ./client/temp.js"
+    "linter" : "npx eslint ."
   },
   "dependencies": {
     "bluebird": "^3.5.3",
@@ -16,6 +16,7 @@
     "bootstrap": "^4.3.1",
     "cors": "^2.8.5",
     "es6-promise": "^4.2.6",
+    "eslint": "^5.15.3",
     "express": "^4.16.4",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.3.1",
@@ -36,7 +37,7 @@
     "babel-loader": "^8.0.5",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-config-hackreactor": "github:reactorcore/eslint-config-hackreactor",
     "faker": "^4.1.0",
     "jest": "^24.5.0",
     "mongodb": "^3.2.2",

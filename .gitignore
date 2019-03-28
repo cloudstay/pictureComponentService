@@ -25,4 +25,5 @@ build/
 dist/
 
 #AWS Config keys#
-config.json
+s3config.json
+unsplashconfig.json

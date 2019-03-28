@@ -25,4 +25,4 @@ build/
 dist/
 
 
-./database/awsS3/config.js
+database/aswS3/config.js

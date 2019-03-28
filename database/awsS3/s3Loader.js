@@ -5,13 +5,23 @@ AWS.config.loadFromPath('../../config.json')
 
 const bucketName= 'staycloudphotobucket';
 
-var samplePhoto= "SampleURL2";
+var samplePhoto= "SampleURL3";
 
 var s3 = new AWS.S3();
 
-s3.client
+var parameters={
+        Bucket: bucketName, 
+        Key: samplePhoto, 
+        Body: "ListingID"
+};
 
-
+s3.upload(parameters, (err, data)=>{
+  if(err){
+    console.log("Err", err);
+  } else {
+    console.log("Success", data);
+  }
+})
 
 // var photoBucketPromise= new AWS.S3({apiVersion : '2006-03-01'}).createBucket({Bucket : bucketName}).promise();
 

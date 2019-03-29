@@ -8,7 +8,8 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "linter" : "npx eslint ."
+    "linter" : "npx eslint .",
+    "randomPhotos": "node ./database/s3/s3seed.js"
   },
   "dependencies": {
     "bluebird": "^3.5.3",

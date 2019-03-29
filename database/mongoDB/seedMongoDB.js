@@ -45,7 +45,7 @@ var mokeDocument = function(ListingID, photoIndex) {
     photoID: `${ListingID}_${photoIndex}`,
     ListingID: `Listing-${ListingID}`,
     photoURL: `https://s3-us-west-1.amazonaws.com/staycloudphotobucket/${roomID}-roomImage.jpg`,
-    photoDescription: faker.lorem.sentences()
+    photoDescription: faker.lorem.sentence()
   };
 };
 

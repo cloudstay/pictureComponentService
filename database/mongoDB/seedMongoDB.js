@@ -16,12 +16,14 @@ const photoCarouselSchema = new mongooose.Schema({
     required: true,
     maxlength: 7,
     minlength: 7,
+    unique: true,
   },
   ListingID: {
     type: String,
     required: true,
     maxlength: 11,
     minlength: 11,
+    unique: true,
   },
   photoURL: {
     type: String,
@@ -67,6 +69,11 @@ function makeCollection(ListingID) {
   });
 }
 
-for (let i = 100; i < 200; i += 1) {
-  makeCollection(i);
+function seedDoc() {
+  for (let i = 100; i < 200; i += 1) {
+    makeCollection(i);
+  }
 }
+
+module.exports.seedDoc = seedDoc;
+module.exports.schema = photoCarouselSchema;

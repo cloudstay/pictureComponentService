@@ -8,9 +8,10 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "linter": "npx eslint . ",
+    "linter": "npx eslint . --fix",
     "randomPhotos": "node ./database/s3/s3seed.js",
-    "seedDB": "node ./database/mongoDB/seedMongoDB.js"
+    "seedDB": "node ./database/mongoDB/runSeedMongo.js",
+    "server" : "nodemon ./server/expressServer.js"
   },
   "dependencies": {
     "bluebird": "^3.5.3",

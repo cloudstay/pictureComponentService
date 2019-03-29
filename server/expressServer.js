@@ -19,7 +19,6 @@ app.use(bodyParser.json());
 
 app.get('/listing/:listingID', (req, res) => {
   getDB.getDBcollection(req.url.slice(9, 12), (err, photoDocuments) => {
-    console.log('Go data');
     if (err) {
       res.status(404);
       res.end();

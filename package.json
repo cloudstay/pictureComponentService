@@ -7,11 +7,15 @@
   "engines": {
     "node": ">=6.13.0"
   },
+  "jest" : {
+    "verbose" : true
+  },
   "scripts": {
     "linter": "npx eslint . --fix",
     "randomPhotos": "node ./database/s3/s3seed.js",
     "seedDB": "node ./database/mongoDB/runSeedMongo.js",
-    "server" : "nodemon ./server/expressServer.js"
+    "server" : "nodemon ./server/expressServer.js",
+    "test" : "jest"
   },
   "dependencies": {
     "bluebird": "^3.5.3",

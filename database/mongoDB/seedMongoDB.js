@@ -2,13 +2,7 @@ const mongooose = require('mongoose');
 const faker = require('faker');
 
 mongooose.connect('mongodb://127.0.0.1:27017/photoCarousel');
-
-
 const database = mongooose.connection;
-
-database.once('open', () => {
-  console.log('Database is connected');
-});
 
 const photoCarouselSchema = new mongooose.Schema({
   photoID: {
@@ -64,7 +58,7 @@ function makeCollection(ListingID) {
     if (err) {
       console.log(err);
     } else if (ListingID === 105) {
-      mongooose.connection.close();
+      database.close();
     }
   });
 }
@@ -77,3 +71,7 @@ function seedDoc() {
 
 module.exports.seedDoc = seedDoc;
 module.exports.schema = photoCarouselSchema;
+module.exports.mokeDocument = mokeDocument;
+module.exports.database = database;
+
+database.close();

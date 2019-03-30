@@ -9,7 +9,8 @@
     "node": ">=6.13.0"
   },
   "jest": {
-    "verbose": true
+    "verbose": true,
+    "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"]
   },
   "scripts": {
     "linter": "npx eslint . --fix",

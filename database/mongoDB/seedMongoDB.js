@@ -58,7 +58,7 @@ function makeCollection(ListingID, callback) {
     if (err) {
       console.log(err);
     } else if (ListingID === 199 || ListingID === 899) {
-      callback(null,"complete");
+      callback(null, 'complete');
       database.close();
     }
   });
@@ -66,11 +66,11 @@ function makeCollection(ListingID, callback) {
 
 function seedDoc() {
   for (let i = 100; i < 200; i += 1) {
-    makeCollection(i,(err,complete)=>{
-      if(err){
+    makeCollection(i, (err, complete) => {
+      if (err) {
         console.log(err);
       } else {
-        console.log(complete)
+        console.log(complete);
       }
     });
   }

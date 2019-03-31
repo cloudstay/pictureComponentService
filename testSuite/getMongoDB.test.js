@@ -2,11 +2,9 @@ var mongooose = require("mongoose");
 const getMongo = require("../database/mongoDB/getMongoDB");
 const seedMongo = require('../database/mongoDB/seedMongoDB.js');
 const Promise = require("bluebird");
-mongooose = Promise.promisifyAll(mongooose);
-makeCollection = Promise.promisifyAll(seedMongo.makeCollection);
 
 
-test('Expect Database to give Listing with first photoID equal to 899_100', async (done) => {
+test('Expect Database to give Listing with first photoID equal to 199_100', async (done) => {
   getMongo.getDBcollection(199, (err, data)=>{
     if(err){
       throw err;

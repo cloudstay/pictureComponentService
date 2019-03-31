@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 // get request based on room number
 
 app.get('/api/rooms', (req, res) => {
+  console.log(req.query);
   getDB.getDBcollection(req.query.id, (err, photoDocuments) => {
     if (err) {
       res.status(404);
@@ -33,3 +34,6 @@ app.get('/api/rooms', (req, res) => {
 app.listen(port, () => {
   console.log(`Listening on ${port}`);
 });
+
+
+module.exports.app=app;

@@ -10,7 +10,13 @@
   },
   "jest": {
     "verbose": true,
-    "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"]
+    "setupFiles": [
+      "<rootDir>/testSuite/setupEnzyme.js"
+    ],
+    "transform": {
+      "^.+\\.jsx$": "babel-jest",
+      "^.+\\.js$": "babel-jest"
+    }
   },
   "scripts": {
     "linter": "npx eslint . --fix",
@@ -18,9 +24,12 @@
     "seedDB": "node ./database/mongoDB/runSeedMongo.js",
     "server": "nodemon ./server/expressServer.js",
     "test": "jest",
+    "testWatch": "jest --watch",
     "buildwp": "webpack --config webpack.config.js"
   },
   "dependencies": {
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.5.0",
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.3.1",

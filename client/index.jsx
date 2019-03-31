@@ -1,6 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom"
+import ReactDOM from "react-dom";
+import Picture from "./components/picture.jsx";
 
 
 
-ReactDOM.render(<div>HelloFromReact</div>, document.getElementById("appHook"));
+ReactDOM.render(<Picture />, document.getElementById("appHook"));

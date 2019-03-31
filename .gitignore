@@ -23,4 +23,8 @@ coverage
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
 dist/
+media/
 
+#AWS Config keys#
+s3config.json
+unsplashconfig.json

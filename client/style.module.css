@@ -4,8 +4,11 @@ body{
 
 .flexContainer {
   display: flex;
-  width: 100%;
+  width: 99.5%;
   flex-wrap: nowrap;
+  position: absolute;
+  top: 80;
+  left: 1;
 }
 
 .flexItem{
@@ -14,21 +17,29 @@ body{
 
 
 .mainPicture {
-  position: absolute;
-  top: 80;
-  left: 0;
-  width: 50%;
+ flex-grow: 2;
+ width: 50%;
+}
+
+.photoSize {
+  width: 100%;
 }
 
 .photoBorder {
-  border: 1px;
   border-style: solid;
-  border-color: #484848;
+  border-color: #000000;
+  border-width: thin;
+}
+
+.topPhoto{
+  border-bottom: 0cm
 }
 
 .secondPics {
-  position: relative;
-  top: 0;
-  left: 0;
+  flex-grow: 1;
+  width: 25%;
+}
+.endPics {
+  flex-grow: 1;
   width: 25%;
 }

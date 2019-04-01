@@ -3,14 +3,14 @@ import "../style.module.css";
 
 var SecondaryPictures = (props)=>{
   return (
-    <div>
+    <span className="secondPics">
       <div>
-        <input type="image" src={props.photos[1].photoURL} alt="topSecondPhoto" className="secondPics photoBorder"></input>
+        <input type="image" src={props.photos[1].photoURL} alt="topSecondPhoto" className="photoSize topPhoto photoBorder"></input>
       </div>
       <div>
-       <input type="image" src={props.photos[2].photoURL} alt="botSecondPhoto" className="secondPics photoBorder"></input>
+       <input type="image" src={props.photos[2].photoURL} alt="botSecondPhoto" className="photoSize photoBorder"></input>
      </div>
-    </div>
+    </span>
     
   )
 }

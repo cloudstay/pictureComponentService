@@ -5,8 +5,8 @@ import "../style.module.css";
 var MainPicture = (props) =>{
   if(props.mainPhoto){
     return (
-      <span>
-        <input type="image" src={props.mainPhoto.photoURL} alt="mainPhoto" className="mainPicture photoBorder"></input>
+      <span className="mainPicture">
+        <input type="image" src={props.mainPhoto.photoURL} alt="mainPhoto" className="photoSize photoBorder"></input>
       </span>
     )
   } else{

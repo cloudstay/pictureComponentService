@@ -59,7 +59,7 @@ class PictureContainer extends React.Component {
         <div className="flexContainer">
           <MainPicture mainPhoto={photos[0]}/>
           <SecondaryPics photos={photos} />
-          {/* <EndPics photos={photos}/> */}
+          <EndPics photos={photos}/>
         </div>
       )
       }else if (this.state.windowWidth>750 && photos.length >= 2){

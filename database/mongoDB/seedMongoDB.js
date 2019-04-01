@@ -59,7 +59,7 @@ function makeCollection(ListingID, callback) {
       console.log(err);
     } else if (ListingID === 199 || ListingID === 899) {
       callback(null, 'complete');
-      database.close();
+      // database.close();
     }
   });
 }
@@ -82,4 +82,4 @@ module.exports.mokeDocument = mokeDocument;
 module.exports.database = database;
 module.exports.makeCollection = makeCollection;
 
-database.close();
+

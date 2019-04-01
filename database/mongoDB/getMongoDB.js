@@ -11,7 +11,7 @@ function getCollection(ListingID, callback) {
       callback(err);
     } else {
       callback(null, listingDocuments);
-      database.close();
+      // database.close();
     }
   });
 }

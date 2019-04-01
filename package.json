@@ -17,7 +17,7 @@
       "^.+\\.jsx$": "babel-jest",
       "^.+\\.js$": "babel-jest"
     },
-    "moduleNameMapper":{
+    "moduleNameMapper": {
       "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     }
@@ -72,6 +72,7 @@
     "puppeteer": "^1.13.0",
     "puppeteer-core": "^1.13.0",
     "redux-devtools": "^3.5.0",
+    "redux-thunk": "^2.3.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   }

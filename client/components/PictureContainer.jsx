@@ -1,6 +1,9 @@
 import React from "react";
 import $ from "jquery";
 import MainPicture from "./MainPicture.jsx";
+import SecondaryPics from "./SecondaryPictures.jsx";
+import EndPics from "./EndPictures.jsx";
+import "../style.module.css";
 
 
 
@@ -53,18 +56,29 @@ class PictureContainer extends React.Component {
     //5 pic layout
     if(this.state.windowWidth>1140 && photos.length >= 4){
       return (
-        <div>
-          <MainPicture mainPhoto={photos[0]} photos={photos}/>
+        <div className="flexContainer">
+          <MainPicture mainPhoto={photos[0]}/>
+          <SecondaryPics photos={photos} />
+          {/* <EndPics photos={photos}/> */}
         </div>
       )
-      }else {
-        return(
-          <div>Hello</div>
+      }else if (this.state.windowWidth>750 && photos.length >= 2){
+        return (
+          <div className="flexContainer">
+            <MainPicture mainPhoto={photos[0]}/>
+            <SecondaryPics photos={photos} />
+          </div>
         )
         
-      }
-  } 
-}
+      } else {
+        return (
+          <div className="flexContainer">
+            <MainPicture mainPhoto={photos[0]}/>
+          </div>
+        )
+    } 
+  }
+};
 
   
 

@@ -25,3 +25,5 @@ build/
 dist/
 
 s3config.json
+
+public/bundle.js

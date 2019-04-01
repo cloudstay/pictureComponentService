@@ -23,11 +23,10 @@ test('Expect photoURL roomID to be less than 200 and more than 99', () => {
 });
 
 
-test('Expect Database to make new Listing', done => {
+test('Expect Database to make new Listing',async (done) => {
   const ListingCollection = mongooose.model(`listing899photo`, seedMongo.schema);
-  ListingCollection.collection.drop();
+  await ListingCollection.collection.drop();
   seedMongo.makeCollection(899, ()=>{
-    database.close();
     done();
   })   
 });

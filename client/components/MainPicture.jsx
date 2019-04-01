@@ -2,12 +2,20 @@ import React from "react";
 import "../style.module.css";
 
 
-var MainPicture = () =>{
-  return (
-    <div className="center">
-      I am Main Picture
-    </div>
-  )
+var MainPicture = (props) =>{
+  if(props.photo){
+    return (
+      <span>
+        <input type="image" src={props.photo.photoURL} alt="mainPhoto" className="mainPicture photoBorder"></input>
+      </span>
+    )
+  } else{
+    return (
+      <div>
+        I am photo
+      </div>
+    )
+  }
 }
 
 

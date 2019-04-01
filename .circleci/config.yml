@@ -30,19 +30,11 @@ jobs:
           paths:
             - node_modules
           
-      - run:
-         name: install
-         command: npm install
-      - run:
-         name: turn on server
-         command: npm run server
-      - run: 
-         name: seed database
-         command: npm run seedDB
+      - run: npm install
+      - run: npm run server
+      - run: npm run seedDB
       
 
       # run tests!
 
-      - run: 
-          name: Run tests
-         command: npm test
+      - run: npm test

@@ -56,7 +56,7 @@ function makeCollection(ListingID, callback) {
 
   ListingCollection.insertMany(seedDocuments, (err) => {
     if (err) {
-      console.log(err);
+      callback(err);
     } else if (ListingID === 199 || ListingID === 899) {
       callback(null, 'complete');
       // database.close();
@@ -68,9 +68,9 @@ function seedDoc() {
   for (let i = 100; i < 200; i += 1) {
     makeCollection(i, (err, complete) => {
       if (err) {
-        console.log(err);
+        database.close();
       } else {
-        console.log(complete);
+        database.close();
       }
     });
   }

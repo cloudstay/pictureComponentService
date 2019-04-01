@@ -8,7 +8,7 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:10.0.0
-      - image: circleci/mongo:3.4-jessie-ram
+      - image: circleci/mongo:3.4.4
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -25,13 +25,24 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-
-      - run: npm install
-      - run: npm run seedDB
       - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+          
+      - run:
+         name: install
+         command: npm install
+      - run:
+         name: turn on server
+         command: npm run server
+      - run: 
+         name: seed database
+         command: npm run seedDB
+      
 
       # run tests!
-      - run: npm test
+
+      - run: 
+          name: Run tests
+         command: npm test

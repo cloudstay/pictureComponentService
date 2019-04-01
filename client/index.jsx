@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Picture from "./components/picture.jsx";
+import Picture from "./components/PictureContainer.jsx";
 
 
 

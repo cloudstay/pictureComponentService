@@ -31,10 +31,9 @@ jobs:
             - node_modules
           
       - run: npm install
-      - run: npm run server
       - run: npm run seedDB
       
 
       # run tests!
 
-      - run: npm test
+      - run: npm run server & npm test

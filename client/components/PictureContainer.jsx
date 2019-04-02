@@ -58,40 +58,51 @@ class PictureContainer extends React.Component {
       var photos = this.state.photos;
     }
     // 1140 px width is switch from 3pic to 5 pic
-    const containerHeight = {
+    var containerHeight = {
       height: '592px',
     };
-    if (this.state.windowHeight < 700) {
-      containerHeight.height = '294.66px';
-    } else if (this.state.windowHeight < 850) {
-      containerHeight.height = '442px';
-    } else {
-      containerHeight.height = '592px';
-    }
     // 750 px width is from 1 pic to 3 pics
 
     // 5 pic layout
     if (this.state.windowWidth > 1130 && photos.length >= 4) {
+      if (this.state.windowHeight < 700) {
+        containerHeight.height = '294.66px';
+      } else if (this.state.windowHeight < 850) {
+        containerHeight.height = '442px';
+      } else {
+        containerHeight.height = '592px';
+      }
       return (
         <div className="flexContainer" style={containerHeight}>
-          <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight} />
+          <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight} windowWidth={this.state.windowWidth}/>
           <SecondaryPics photos={photos} windowHeight={this.state.windowHeight} />
           <EndPics photos={photos} windowHeight={this.state.windowHeight} />
         </div>
       );
-    } if (this.state.windowWidth > 750 && photos.length >= 2) {
+    } else if (this.state.windowWidth > 750 && photos.length >= 2) {
+      if (this.state.windowHeight < 700) {
+        containerHeight.height = '294.60px';
+      } else if (this.state.windowHeight < 850) {
+        containerHeight.height = '353.59px';
+      } else {
+        containerHeight.height = '473.59px';
+      }
       return (
         <div className="flexContainer" style={containerHeight}>
-          <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight} />
+          <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight} windowWidth={this.state.windowWidth} />
           <SecondaryPics photos={photos} windowHeight={this.state.windowHeight} />
         </div>
       );
+    } else {
+      containerHeight.height=`${(this.state.windowWidth)/1.535}px`;
+      containerHeight['top']='64';
+      return (
+        <div className="flexContainer" style={containerHeight}>
+          <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight}  windowWidth={this.state.windowWidth}/>
+        </div>
+      );
     }
-    return (
-      <div className="flexContainer" style={containerHeight}>
-        <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight} />
-      </div>
-    );
+    
   }
 }
 

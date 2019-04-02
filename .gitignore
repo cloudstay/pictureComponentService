@@ -25,6 +25,6 @@ build/
 dist/
 media/
 
-#AWS Config keys#
+
 s3config.json
-unsplashconfig.json
+

@@ -10,7 +10,7 @@ const port = 3006;
 
 // app set at localhost:3006/listing/
 
-app.use('/api', express.static('public'));
+app.use('/rooms', express.static('public'));
 
 
 // use of body parser
@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 // get request based on room number
 
 
-app.get('/api/rooms', (req, res) => {
+app.get('/rooms/api', (req, res) => {
   getDB.getDBcollection(req.query.id, (err, photoDocuments) => {
     if (err) {
       res.status(404);

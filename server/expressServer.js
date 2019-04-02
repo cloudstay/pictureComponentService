@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 // get request based on room number
 
 
-app.get('/api/rooms', (req, res) => {
+app.get('/', (req, res) => {
   getDB.getDBcollection(req.query.id, (err, photoDocuments) => {
     if (err) {
       res.status(404);

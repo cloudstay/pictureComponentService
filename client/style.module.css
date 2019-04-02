@@ -1,0 +1,21 @@
+body{
+  background-color: #ffffff;
+}
+
+.mainPicture {
+  position: absolute;
+  top: 80;
+  left: 0;
+  width: 50%;
+}
+
+.photoBorder {
+  border: 1px;
+  border-style: solid;
+  border-color: #484848;
+}
+
+.secondPics {
+  position: relative;
+  width: 25%;
+}

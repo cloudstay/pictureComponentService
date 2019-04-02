@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-// const getDB = require('../database/mongoDB/getMongoDB.js');
 const exampleData = require('../__mocks__/mockPhotoData.js');
+const getDB = require('../database/mongoDB/getMongoDB.js');
 
 const app = express();
 
@@ -18,18 +18,17 @@ app.use(bodyParser.json());
 
 // get request based on room number
 
+
 app.get('/rooms/api', (req, res) => {
-  // getDB.getDBcollection(req.query.id, (err, photoDocuments) => {
-  //   if (err) {
-  //     res.status(404);
-  //     res.end();
-  //   } else {
-  //     res.status(200);
-  //     res.end(JSON.stringify(photoDocuments));
-  //   }
-  // });
-  res.status(200);
-  res.end(JSON.stringify(exampleData));
+  getDB.getDBcollection(req.query.id, (err, photoDocuments) => {
+    if (err) {
+      res.status(404);
+      res.end();
+    } else {
+      res.status(200);
+      res.end(JSON.stringify(photoDocuments));
+    }
+  });
 });
 
 

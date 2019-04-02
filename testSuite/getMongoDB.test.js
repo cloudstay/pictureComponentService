@@ -4,7 +4,7 @@ const seedMongo = require('../database/mongoDB/seedMongoDB.js');
 const Promise = require("bluebird");
 
 
-test('Expect Database to give Listing with first photoID equal to 199_100', async (done) => {
+test('Expect Database to give Listing with first photoID equal to 199_100', (done) => {
   getMongo.getDBcollection(199, (err, data)=>{
     if(err){
       throw err;

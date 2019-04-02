@@ -1,0 +1,40 @@
+import React from "react";
+import {shallow, mount} from "enzyme"
+import MainPicture from "../client/components/MainPicture.jsx";
+import mockPhotos from "../__mocks__/mockPhotoData.js"
+
+
+
+
+
+describe('Render Picture React Base', ()=>{
+  it("should render without error", () =>{
+    const wrapper = shallow(<MainPicture />);
+    expect((wrapper).exists()).toBe(true);
+  });
+  it("should return dummy text if no props are passed in", () =>{
+    const wrapper = shallow(<MainPicture />);
+    expect(wrapper.props().children).toBe("I am photo")
+  });
+  it("Should Allow props of photo to be passed in", () =>{
+    const wrapper = mount(<MainPicture photo={mockPhotos[0]}/>);
+    expect(wrapper.props().children).toBe(undefined);
+    expect(typeof wrapper.props().photo).toBe("object");
+  });
+  it("with mainPhoto prop should conditionally render to img in span", () =>{
+    const wrapper = mount(<MainPicture mainPhoto={mockPhotos[0]}/>);
+    expect(wrapper.children().hasClass("mainPicture")).toBe(true);
+    expect(wrapper.children().children().hasClass("photoSize")).toBe(true);
+    // expect(wrapper.props().children).toBe(undefined);
+    // expect(typeof wrapper.props().photo).toBe("object");
+  });
+  it("with mainPhoto prop should conditionally render to span with img in it", () =>{
+    const wrapper = mount(<MainPicture mainPhoto={mockPhotos[0]}/>);
+    console.log(wrapper.children().children().props("type"))
+    // expect(wrapper.children().hasClass("mainPicture")).toBe(true);
+    expect(wrapper.children().children().props().type).toBe("image");
+    expect(wrapper.children().children().props().src).toEqual(expect.stringContaining("amazon"));
+    
+  });
+});
+

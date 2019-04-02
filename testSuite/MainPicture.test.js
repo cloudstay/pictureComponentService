@@ -28,9 +28,13 @@ describe('Render Picture React Base', () => {
     expect(wrapper.children().children().props().type).toBe('image');
     expect(wrapper.children().children().props().src).toEqual(expect.stringContaining('amazon'));
   });
-  it('with mainPhoto should render with size change', () => {
+  it('with mainPhoto should render with height and widthchange', () => {
     const wrapper = mount(<MainPicture mainPhoto={mockPhotos[0]} />);
     wrapper.setProps({windowHeight : 900});
+    wrapper.update();
+    expect(wrapper.children().children().props().style.height).toBe('100%');
+    wrapper.setProps({windowHeight : 900});
+    wrapper.setProps({windowWidth : 900});
     wrapper.update();
     expect(wrapper.children().children().props().style.height).toBe('590px');
     wrapper.setProps({windowHeight : 500});

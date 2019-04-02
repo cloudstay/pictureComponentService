@@ -46,7 +46,7 @@ function mokeDocument(ListingID, photoIndex) {
   };
 }
 
-function makeCollection(ListingID) {
+function makeCollection(ListingID, callback) {
   const ListingCollection = mongooose.model(`listing${ListingID}photo`, photoCarouselSchema);
   const seedDocuments = [];
   const photos = Math.floor(Math.random() * 20) + 100;
@@ -56,16 +56,23 @@ function makeCollection(ListingID) {
 
   ListingCollection.insertMany(seedDocuments, (err) => {
     if (err) {
-      console.log(err);
-    } else if (ListingID === 105) {
-      database.close();
+      callback(err);
+    } else if (ListingID === 199 || ListingID === 899) {
+      callback(null, 'complete');
+      // database.close();
     }
   });
 }
 
 function seedDoc() {
   for (let i = 100; i < 200; i += 1) {
-    makeCollection(i);
+    makeCollection(i, (err, complete) => {
+      if (err) {
+        database.close();
+      } else {
+        database.close();
+      }
+    });
   }
 }
 
@@ -73,5 +80,6 @@ module.exports.seedDoc = seedDoc;
 module.exports.schema = photoCarouselSchema;
 module.exports.mokeDocument = mokeDocument;
 module.exports.database = database;
+module.exports.makeCollection = makeCollection;
 
-database.close();
+

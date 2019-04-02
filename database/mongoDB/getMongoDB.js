@@ -2,8 +2,6 @@ const mongooose = require('mongoose');
 const photoCarouselSchema = require('./seedMongoDB.js');
 
 
-
-
 function getCollection(ListingID, callback) {
   mongooose.connect('mongodb://127.0.0.1:27017/photoCarousel');
   const database = mongooose.connection;
@@ -13,7 +11,7 @@ function getCollection(ListingID, callback) {
       callback(err);
     } else {
       callback(null, listingDocuments);
-      database.close();
+      // database.close();
     }
   });
 }

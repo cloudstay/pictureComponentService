@@ -35,7 +35,7 @@ class PictureContainer extends React.Component {
   getPhotos(){
     $.ajax({
       type: "GET",
-      url: "/",
+      url: "/api/rooms",
       success : (photoArray) =>{
         this.setState({photos : JSON.parse(photoArray)});
       },

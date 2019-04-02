@@ -10,7 +10,7 @@ const port = 3006;
 
 // app set at localhost:3006/listing/
 
-app.use('/api/', express.static('public'));
+app.use('/api', express.static('public'));
 
 
 // use of body parser
@@ -37,4 +37,6 @@ app.get('/api/rooms', (req, res) => {
 app.listen(port, () => {
   console.log(`Listening on ${port}`);
 });
+
+module.exports.app=app;
 

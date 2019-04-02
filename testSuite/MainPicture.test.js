@@ -25,13 +25,9 @@ describe('Render Picture React Base', ()=>{
     const wrapper = mount(<MainPicture mainPhoto={mockPhotos[0]}/>);
     expect(wrapper.children().hasClass("mainPicture")).toBe(true);
     expect(wrapper.children().children().hasClass("photoSize")).toBe(true);
-    // expect(wrapper.props().children).toBe(undefined);
-    // expect(typeof wrapper.props().photo).toBe("object");
   });
   it("with mainPhoto prop should conditionally render to span with img in it", () =>{
     const wrapper = mount(<MainPicture mainPhoto={mockPhotos[0]}/>);
-    console.log(wrapper.children().children().props("type"))
-    // expect(wrapper.children().hasClass("mainPicture")).toBe(true);
     expect(wrapper.children().children().props().type).toBe("image");
     expect(wrapper.children().children().props().src).toEqual(expect.stringContaining("amazon"));
     

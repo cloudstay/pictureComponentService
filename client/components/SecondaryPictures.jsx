@@ -1,18 +1,26 @@
-import React from "react";
-import "../style.module.css";
+import React from 'react';
+import '../style.module.css';
 
-var SecondaryPictures = (props)=>{
+const SecondaryPictures = props => {
+  //dynamicl rendering of pictures heights
+  var pictureHeight ={
+    height : '294px'
+  }
+  if (props.windowHeight >= 850) {
+    pictureHeight.height = '294px';
+  } else {
+    pictureHeight.height = '244px';
+  }
   return (
     <span className="secondPics">
-      <div>
-        <input type="image" src={props.photos[1].photoURL} alt="topSecondPhoto" className="photoSize topPhoto photoBorder"></input>
+      <div className="dualPicContainer">
+        <input type="image" src={props.photos[1].photoURL} alt="topSecondPhoto" style= {pictureHeight} className="photoSize topPhoto photoBorder" />
       </div>
-      <div>
-       <input type="image" src={props.photos[2].photoURL} alt="botSecondPhoto" className="photoSize photoBorder"></input>
-     </div>
+      <div className="dualPicContainer">
+        <input type="image" src={props.photos[2].photoURL} alt="botSecondPhoto" style= {pictureHeight} className="photoSize photoBorder" />
+      </div>
     </span>
-    
   )
-}
+};
 
 export default SecondaryPictures;

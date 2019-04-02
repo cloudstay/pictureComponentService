@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 // const getDB = require('../database/mongoDB/getMongoDB.js');
-const exampleData = require("../__mocks__/mockPhotoData.js");
+const exampleData = require('../__mocks__/mockPhotoData.js');
+
 const app = express();
 
 
@@ -28,7 +29,7 @@ app.get('/api/rooms', (req, res) => {
   //   }
   // });
   res.status(200);
-  res.end(JSON.stringify(exampleData))
+  res.end(JSON.stringify(exampleData));
 });
 
 

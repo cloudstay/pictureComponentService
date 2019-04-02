@@ -5,10 +5,15 @@ body{
 .flexContainer {
   display: flex;
   width: 99.5%;
+  height: 10%;
   flex-wrap: nowrap;
   position: absolute;
+  overflow: hidden;
   top: 80;
   left: 1;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
 }
 
 .flexItem{
@@ -19,6 +24,11 @@ body{
 .mainPicture {
  flex-grow: 2;
  width: 50%;
+ height: 590px;
+ border-right: #000000;
+ border-style: solid;
+ border-color: #000000;
+ border-width: 1px;
 }
 
 .photoSize {
@@ -28,7 +38,7 @@ body{
 .photoBorder {
   border-style: solid;
   border-color: #000000;
-  border-width: thin;
+  border-width: 1px;
 }
 
 .topPhoto{
@@ -37,9 +47,13 @@ body{
 
 .secondPics {
   flex-grow: 1;
-  width: 25%;
+  width: 24.5%;
 }
 .endPics {
   flex-grow: 1;
-  width: 25%;
+  width: 24.5%;
+}
+
+.dualPicContainer{
+  height: 50%;
 }

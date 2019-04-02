@@ -1,18 +1,25 @@
-import React from "react";
-import "../style.module.css";
+import React from 'react';
+import '../style.module.css';
 
-var EndPictures = (props)=>{
+const EndPictures = props => {
+  var pictureHeight ={
+    height : '294px'
+  }
+  if (props.windowHeight >= 850) {
+    pictureHeight.height = '294px';
+  } else {
+    pictureHeight.height = '244px';
+  }
   return (
     <span className="endPics">
-      <div>
-        <input type="image" src={props.photos[3].photoURL} alt="mainPhoto" className="photoSize topPhoto photoBorder"></input>
+      <div className="dualPicContainer">
+        <input type="image" src={props.photos[3].photoURL} alt="mainPhoto" style={pictureHeight} className="photoSize topPhoto photoBorder" />
       </div>
-      <div>
-       <input type="image" src={props.photos[4].photoURL} alt="mainPhoto" className="photoSize photoBorder"></input>
-     </div>
+      <div className="dualPicContainer">
+        <input type="image" src={props.photos[4].photoURL} alt="mainPhoto" style={pictureHeight}  className="photoSize photoBorder" />
+      </div>
     </span>
-    
   )
-}
+};
 
 export default EndPictures;

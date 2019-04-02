@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const exampleData = require('../__mocks__/mockPhotoData.js');
 const getDB = require('../database/mongoDB/getMongoDB.js');
 
 const app = express();
@@ -8,7 +7,7 @@ const app = express();
 
 const port = 3006;
 
-// app set at localhost:3006/listing/
+// app set at localhost:3006/rooms?id=XXX
 app.use('/rooms/', express.static('public'));
 
 // use of body parser
@@ -17,8 +16,6 @@ app.use(bodyParser.json());
 
 
 // get request based on room number
-
-
 app.get('/rooms/api', (req, res) => {
   getDB.getDBcollection(req.query.id, (err, photoDocuments) => {
     if (err) {

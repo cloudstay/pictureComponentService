@@ -5,10 +5,18 @@ import '../style.module.css';
 
 var TopButtonsContainer = (props) =>{
   //refactor for 1 pic vs many pics
+  var topButtonContainerWidth = {
+    width : null
+  }
+  if(props.windowWidth < 745 ){
+    topButtonContainerWidth.width = '64px';
+  } else {
+    topButtonContainerWidth.width = '206px';
+  }
   return (
-    <span className="topButtonContainer">
-      <ShareButton />
-      <SaveButton />
+    <span className="topButtonContainer" style={topButtonContainerWidth}>
+      <ShareButton windowWidth={props.windowWidth} />
+      <SaveButton windowWidth={props.windowWidth}/>
     </span>
     
   )

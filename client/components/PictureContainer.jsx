@@ -3,7 +3,8 @@ import $ from 'jquery';
 import MainPicture from './MainPicture.jsx';
 import SecondaryPics from './SecondaryPictures.jsx';
 import EndPics from './EndPictures.jsx';
-import TopButtonsContainer from "./TopButtonsContainer.jsx"
+import TopButtonsContainer from "./TopButtonsContainer.jsx";
+import ViewPicButton from "./ViewPicButton.jsx";
 import '../style.module.css';
 
 
@@ -78,11 +79,12 @@ class PictureContainer extends React.Component {
           <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight} windowWidth={this.state.windowWidth}/>
           <SecondaryPics photos={photos} windowHeight={this.state.windowHeight} />
           <EndPics photos={photos} windowHeight={this.state.windowHeight} />
-          <TopButtonsContainer />
+          <TopButtonsContainer windowWidth={this.state.windowWidth}/>
+          <ViewPicButton windowHeight={this.state.windowHeight}/>
         </div>
       );
       //3 picture laoyout
-    } else if (this.state.windowWidth > 750 && photos.length >= 2) {
+    } else if (this.state.windowWidth > 745 && photos.length >= 2) {
       if (this.state.windowHeight < 700) {
         containerHeight.height = '294.60px';
       } else if (this.state.windowHeight < 850) {
@@ -94,6 +96,8 @@ class PictureContainer extends React.Component {
         <div className="flexContainer" style={containerHeight}>
           <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight} windowWidth={this.state.windowWidth} />
           <SecondaryPics photos={photos} windowHeight={this.state.windowHeight} />
+          <TopButtonsContainer windowWidth={this.state.windowWidth}/>
+          <ViewPicButton windowHeight={this.state.windowHeight}/>
         </div>
       );
       //1 picture layout
@@ -103,6 +107,7 @@ class PictureContainer extends React.Component {
       return (
         <div className="flexContainer" style={containerHeight}>
           <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight}  windowWidth={this.state.windowWidth}/>
+          <TopButtonsContainer windowWidth={this.state.windowWidth}/>
         </div>
       );
     }}

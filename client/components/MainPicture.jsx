@@ -10,7 +10,7 @@ const MainPicture = (props) => {
   var mainPicHeight = {
     height: '100%',
   };
-  if(props.windowWidth > 750){
+  if(props.windowWidth > 745){
     if (props.windowHeight >= 850) {
       mainPicHeight.height = '590px';
     } else {

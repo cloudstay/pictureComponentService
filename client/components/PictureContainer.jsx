@@ -3,6 +3,7 @@ import $ from 'jquery';
 import MainPicture from './MainPicture.jsx';
 import SecondaryPics from './SecondaryPictures.jsx';
 import EndPics from './EndPictures.jsx';
+import TopButtonsContainer from "./TopButtonsContainer.jsx"
 import '../style.module.css';
 
 
@@ -64,7 +65,7 @@ class PictureContainer extends React.Component {
     // 750 px width is from 1 pic to 3 pics
 
     // 5 pic layout
-    if (this.state.windowWidth > 1130 && photos.length >= 4) {
+    {if (this.state.windowWidth > 1130 && photos.length >= 4) {
       if (this.state.windowHeight < 700) {
         containerHeight.height = '294.66px';
       } else if (this.state.windowHeight < 850) {
@@ -77,8 +78,10 @@ class PictureContainer extends React.Component {
           <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight} windowWidth={this.state.windowWidth}/>
           <SecondaryPics photos={photos} windowHeight={this.state.windowHeight} />
           <EndPics photos={photos} windowHeight={this.state.windowHeight} />
+          <TopButtonsContainer />
         </div>
       );
+      //3 picture laoyout
     } else if (this.state.windowWidth > 750 && photos.length >= 2) {
       if (this.state.windowHeight < 700) {
         containerHeight.height = '294.60px';
@@ -93,6 +96,7 @@ class PictureContainer extends React.Component {
           <SecondaryPics photos={photos} windowHeight={this.state.windowHeight} />
         </div>
       );
+      //1 picture layout
     } else {
       containerHeight.height=`${(this.state.windowWidth)/1.535}px`;
       containerHeight['top']='64';
@@ -101,8 +105,7 @@ class PictureContainer extends React.Component {
           <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight}  windowWidth={this.state.windowWidth}/>
         </div>
       );
-    }
-    <
+    }}
   }
 }
 

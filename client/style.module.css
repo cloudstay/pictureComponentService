@@ -1,3 +1,4 @@
+/* Base Container Components */
 body{
   background-color: #ffffff;
 }
@@ -15,10 +16,7 @@ body{
   border-width: 1px;
 }
 
-.flexItem{
-  color: red;
-}
-
+/* Picture Components */
 
 .mainPicture {
  flex-grow: 2;
@@ -55,4 +53,49 @@ body{
 
 .dualPicContainer{
   height: 50%;
+}
+
+
+/* Save Button Components */
+
+.topButtonContainer{
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  right: 36;
+  top: 105;
+  width: 206;
+}
+
+.button {
+  display: flex;
+  justify-content: space-evenly;
+  height: 36px;
+  background: #ffffff;
+  color: #484848;
+  border-radius: 4px;
+  border: none;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+}
+
+.saveButton {
+  width: 91px;
+}
+.saveHeart {
+  position: relative;
+  top: 4px;
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  color: #484848;
+}
+
+.shareButton {
+  width: 97px;
+}
+
+.buttonWriting{
+  color: #484848;
+  font-size: 14px;
+  line-height: 22px;
 }

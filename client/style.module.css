@@ -81,13 +81,16 @@ body{
 .saveButton {
   width: 91px;
 }
-.saveHeart {
+.buttonIcon {
   position: relative;
   top: 4px;
   width: 15px;
   height: 15px;
   background: #ffffff;
   color: #484848;
+}
+.sharePic {
+  top: 3px;
 }
 
 .shareButton {

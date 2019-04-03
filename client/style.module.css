@@ -4,7 +4,7 @@ body{
 
 .flexContainer {
   display: flex;
-  width: 97%;
+  width: 98.5%;
   flex-wrap: nowrap;
   position: absolute;
   overflow: hidden;

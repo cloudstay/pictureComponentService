@@ -102,7 +102,7 @@ class PictureContainer extends React.Component {
         </div>
       );
     }
-    
+    <
   }
 }
 

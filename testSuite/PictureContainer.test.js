@@ -18,8 +18,9 @@ describe('Render Picture React Base', () => {
     wrapper.setState({ windowWidth: 700 });
     wrapper.setState({ photos: mockPhotos });
     expect(wrapper.state().windowWidth).toBe(700);
-    expect(wrapper.children().children().length).toBe(1);
-    expect(wrapper.children().children().name()).toBe('MainPicture');
+    expect(wrapper.children().children().length).toBe(2);
+    expect(wrapper.children().childAt(0).name()).toBe('MainPicture');
+    expect(wrapper.children().childAt(1).name()).toBe('TopButtonsContainer');
   });
   it('should render MainPicture & SecondaryPics & EndPics is width is greater than 1140', () => {
     const wrapper = mount(<PictureContainer />);
@@ -27,10 +28,12 @@ describe('Render Picture React Base', () => {
     wrapper.setState({ photos: mockPhotos });
     wrapper.update();
     expect(wrapper.state().windowWidth).toBe(1500);
-    expect(wrapper.children().children().length).toBe(3);
+    expect(wrapper.children().children().length).toBe(5);
     expect(wrapper.children().childAt(0).name()).toBe('MainPicture');
     expect(wrapper.children().childAt(1).name()).toBe('SecondaryPictures');
     expect(wrapper.children().childAt(2).name()).toBe('EndPictures');
+    expect(wrapper.children().childAt(3).name()).toBe('TopButtonsContainer');
+    expect(wrapper.children().childAt(4).name()).toBe('ViewPicButton');
   });
   it('should render to different sizes depending on window Height', ()=>{
     const wrapper = mount(<PictureContainer />);

@@ -13,7 +13,7 @@ describe('Render Picture React Base', () => {
     expect(wrapper.state().photos).toBe(null);
     expect(wrapper.state().windowHeight).toBeGreaterThanOrEqual(0);
   });
-  it('should render just MainPicture is width is less than 750', () => {
+  it('should render just MainPicture is width is less than 745', () => {
     const wrapper = mount(<PictureContainer />);
     wrapper.setState({ windowWidth: 700 });
     wrapper.setState({ photos: mockPhotos });
@@ -22,7 +22,7 @@ describe('Render Picture React Base', () => {
     expect(wrapper.children().childAt(0).name()).toBe('MainPicture');
     expect(wrapper.children().childAt(1).name()).toBe('TopButtonsContainer');
   });
-  it('should render MainPicture & SecondaryPics & EndPics is width is greater than 1140', () => {
+  it('should render MainPicture/SecondaryPics/ EndPics/ All Buttons is width is greater than 1140', () => {
     const wrapper = mount(<PictureContainer />);
     wrapper.setState({ windowWidth: 1500 });
     wrapper.setState({ photos: mockPhotos });
@@ -48,5 +48,14 @@ describe('Render Picture React Base', () => {
     wrapper.setState({ windowHeight: 900 });
     wrapper.update();
     expect(wrapper.children().props().style.height).toBe('592px');
+  })
+
+  it('should no render view Photos button if width is less than 745px', ()=>{
+    const wrapper = mount(<PictureContainer />);
+    wrapper.setState({ windowWidth: 500 });
+    wrapper.setState({ windowHeight: 500 });
+    wrapper.setState({ photos: mockPhotos });
+    wrapper.update();
+    expect(wrapper.children().html()).toEqual(expect.not.stringContaining("viewPicButton"));
   })
 });

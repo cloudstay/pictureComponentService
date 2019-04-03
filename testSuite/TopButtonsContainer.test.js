@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import TopButtonsContainer from '../client/components/TopButtonsContainer.jsx';
-import mockPhotos from '../__mocks__/mockPhotoData.js';
 
 describe('Button Container Tests', ()=>{
   it('Should render without error', () => {

@@ -28,7 +28,11 @@ app.get('/rooms/api', (req, res) => {
   });
 });
 
+if(process.env.NODE_ENV !== 'test'){
+  app.listen(port, () => {
+    console.log(`Listening on ${port}`);
+  });
+}
 
-app.listen(port, () => {
-  console.log(`Listening on ${port}`);
-});
+
+module.exports=app;

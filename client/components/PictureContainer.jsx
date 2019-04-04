@@ -16,9 +16,13 @@ class PictureContainer extends React.Component {
       windowHeight: 0,
       windowWidth: 0,
       displayType: 1,
-      containerHeight: {
-        height: '592px',
-      },
+      photoStyle : [
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
     };
     this.setState = this.setState.bind(this);
     this.getPhotos = this.getPhotos.bind(this);
@@ -76,7 +80,7 @@ class PictureContainer extends React.Component {
       }
       return (
         <div className="flexContainer" style={containerHeight}>
-          <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight} windowWidth={this.state.windowWidth}/>
+          <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight} windowWidth={this.state.windowWidth} photoStyle={this.state.photoStyle[0]} />
           <SecondaryPics photos={photos} windowHeight={this.state.windowHeight} />
           <EndPics photos={photos} windowHeight={this.state.windowHeight} />
           <TopButtonsContainer windowWidth={this.state.windowWidth}/>
@@ -94,9 +98,9 @@ class PictureContainer extends React.Component {
       }
       return (
         <div className="flexContainer" style={containerHeight}>
-          <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight} windowWidth={this.state.windowWidth} />
-          <SecondaryPics photos={photos} windowHeight={this.state.windowHeight} />
-          <TopButtonsContainer windowWidth={this.state.windowWidth}/>
+          <MainPicture  mainPhoto={photos[0]} windowHeight={this.state.windowHeight} windowWidth={this.state.windowWidth} />
+          <SecondaryPics  photos={photos} windowHeight={this.state.windowHeight} />
+          <TopButtonsContainer windowWidth={this.state.windowWidth} />
           <ViewPicButton windowHeight={this.state.windowHeight}/>
         </div>
       );
@@ -106,7 +110,7 @@ class PictureContainer extends React.Component {
       containerHeight['top']='64';
       return (
         <div className="flexContainer" style={containerHeight}>
-          <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight}  windowWidth={this.state.windowWidth}/>
+          <MainPicture mainPhoto={photos[0]} windowHeight={this.state.windowHeight} windowWidth={this.state.windowWidth} />
           <TopButtonsContainer windowWidth={this.state.windowWidth}/>
         </div>
       );

@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 import '../style.module.css';
 
 const picHeight = {
@@ -7,22 +8,22 @@ const picHeight = {
 
 const MainPicture = (props) => {
   // render height based off of window height
-  var mainPicHeight = {
+  var mainPicStyle = {
     height: '100%',
   };
   if(props.windowWidth > 745){
     if (props.windowHeight >= 850) {
-      mainPicHeight.height = '590px';
+      mainPicStyle.height = '590px';
+      // props.photoState['height']='590px';
     } else {
-      mainPicHeight.height = '552px';
+      mainPicStyle.height = '552px';
     }
   }
-
-
+  $.extend(mainPicStyle, props.photoStyle);
   if (props.mainPhoto) {
     return (
-      <span className="mainPicture">
-        <input type="image" src={props.mainPhoto.photoURL} alt={props.mainPhoto.photoDescription} style={mainPicHeight} className="photoSize" />
+      <span className="mainPicture hoverHelper">
+        <input type="image" src={props.mainPhoto.photoURL} alt={props.mainPhoto.photoDescription} style={mainPicStyle} className="photoSize photo0 darken" />
       </span>
     );
   }

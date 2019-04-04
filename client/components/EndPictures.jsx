@@ -1,22 +1,26 @@
 import React from 'react';
+import $ from 'jquery';
 import '../style.module.css';
 
 const EndPictures = props => {
-  var pictureHeight ={
+  var photoStyle ={
     height : '294px'
   }
   if (props.windowHeight >= 850) {
-    pictureHeight.height = '294px';
+    photoStyle.height = '294px';
+    $.extend(props.photoStyle,photoStyle);
   } else {
-    pictureHeight.height = '244px';
+    photoStyle.height = '244px';
+    $.extend(photoStyle,props.photoStyle);
   }
+  
   return (
-    <span className="endPics">
-      <div className="dualPicContainer">
-        <input type="image" src={props.photos[3].photoURL} alt="mainPhoto" style={pictureHeight} className="photoSize topPhoto photoBorder" />
+    <span className="endPics hoverHelper">
+      <div className="dualPicContainer darken">
+        <input type="image" src={props.photos[3].photoURL} alt="mainPhoto" style={photoStyle} className="photoSize topPhoto photoBorder photo3" />
       </div>
-      <div className="dualPicContainer">
-        <input type="image" src={props.photos[4].photoURL} alt="mainPhoto" style={pictureHeight}  className="photoSize photoBorder" />
+      <div className="dualPicContainer darken">
+        <input type="image" src={props.photos[4].photoURL} alt="mainPhoto" style={photoStyle}  className="photoSize photoBorder photo4" />
       </div>
     </span>
   )

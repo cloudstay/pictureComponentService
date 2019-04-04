@@ -16,6 +16,7 @@ body{
   border-width: 1px;
 }
 
+
 /* Picture Components */
 
 .mainPicture {
@@ -26,11 +27,13 @@ body{
  border-style: solid;
  border-color: #000000;
  border-width: 1px;
+ overflow: hidden;
 }
 
 .photoSize {
   width: 100%;
 }
+
 
 .photoBorder {
   border-style: solid;
@@ -53,9 +56,30 @@ body{
 
 .dualPicContainer{
   height: 50%;
+  overflow: hidden;
 }
 
+/* Photo Hover Events */
 
+.flexContainer:hover > .hoverHelper > .darken:not(:hover){
+  filter: brightness(70%);
+}
+.photo0:hover{
+  transform: scale(1.05);
+}
+
+.photo1:hover{
+  transform: scale(1.05);
+}
+.photo2:hover{
+  transform: scale(1.05);
+}
+.photo3:hover{
+  transform: scale(1.05);
+}
+.photo4:hover{
+  transform: scale(1.05);
+}
 /* MultiPic Button Components */
 
 .topButtonContainer{

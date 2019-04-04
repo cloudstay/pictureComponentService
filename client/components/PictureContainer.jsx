@@ -31,11 +31,23 @@ class PictureContainer extends React.Component {
     this.getPhotos = this.getPhotos.bind(this);
     this.windowDimensions = this.windowDimensions.bind(this);
     this.photoCarouselMode= this.photoCarouselMode.bind(this);
+    this.updateContainers=this.updateContainers.bind(this);
   }
 
   componentDidMount() {
     this.getPhotos();
     this.windowDimensions();
+    window.addEventListener('resize', this.windowDimensions);
+  }
+
+  windowDimensions() {
+    this.setState({
+      windowWidth: window.innerWidth,
+      windowHeight: window.innerHeight,
+    });
+    this.updateContainers();
+  }
+  updateContainers () {
     this.setState({
       primaryPhotoContainer : <MainPicture photoCarouselMode={this.photoCarouselMode} mainPhoto={this.state.photos[0]} windowHeight={this.state.windowHeight} windowWidth={this.state.windowWidth} photoStyle={this.state.photoStyle[0]} />,
     });
@@ -51,17 +63,7 @@ class PictureContainer extends React.Component {
     this.setState({
       viewButtonContainer : <ViewPicButton windowHeight={this.state.windowHeight}/>
     });
-
-    window.addEventListener('resize', this.windowDimensions);
   }
-
-  windowDimensions() {
-    this.setState({
-      windowWidth: window.innerWidth,
-      windowHeight: window.innerHeight,
-    });
-  }
-
   getPhotos() {
     var roomID=window.location.search.slice(4,7);
     $.ajax({

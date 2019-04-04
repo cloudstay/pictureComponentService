@@ -1,6 +1,8 @@
 /* Base Container Components */
 body{
   background-color: #ffffff;
+  margin: 0;
+  min-width: 600px !important;
 }
 input:focus {
   outline: 0 !important;
@@ -189,20 +191,34 @@ button:focus {
   height: 100%;
 }
 
-.pcBackButton{
+.pcButton{
   position: absolute;
   display: flex;
   align-content: center;
-  left: -10;
   top: 0;
   height: 100%;
   background-color: transparent;
   border: none;
 }
 
+/* Build off of .pcButton */
+.pcBack{
+  left: -10;
+}
+.pcForward {
+  right: -10;
+}
+
 .pcBackImg {
   position: relative;
   left: 0;
+  top: 2;
+  filter: invert(100%);
+}
+
+.pcForwardImg {
+  position: relative;
+  right: 0;
   top: 2;
   filter: invert(100%);
 }

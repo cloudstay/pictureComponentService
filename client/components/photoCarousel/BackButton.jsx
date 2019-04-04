@@ -11,7 +11,7 @@ var BackButton = (props) =>{
     backButtonStyle.height=33;
   }
   return (
-    <button onClick={()=>props.changePhotoCarMainPhoto('-') }type="submit" className="pcBackButton">
+    <button onClick={()=>props.changePhotoCarMainPhoto('-')} type="submit" className="pcButton pcBack">
             <img className="pcBackImg" style={backButtonStyle} src="./media/backArrow.svg" alt="https://www.freepik.com/"></img>
     </button>
   )

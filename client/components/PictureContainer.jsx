@@ -106,11 +106,18 @@ class PictureContainer extends React.Component {
     if(photoID === '-'){
       photoID=this.state.photos.indexOf(this.state.currentPhoto);
       photoID--;
+      if(photoID < 0){
+        photoID=this.state.photos.length-1;
+      }
+    } else if (photoID === '+'){
+      photoID=this.state.photos.indexOf(this.state.currentPhoto);
+      photoID++;
+      if(photoID >= this.state.photos.length){
+        photoID=0;
+      }
     }
 
-    if(photoID < 0){
-      photoID=this.state.photos.length-1;
-    }
+    
     this.setState({currentPhoto : this.state.photos[photoID]});
   }
 

@@ -85,7 +85,7 @@ class PictureContainer extends React.Component {
     };
     if(this.state.photoCarousel === true){
       return (
-        <PhotoCarousel />
+        <PhotoCarousel photos={this.state.photos}/>
       )
     } else {
       // 1140 px width is switch from 3pic to 5 pic

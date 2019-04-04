@@ -14,7 +14,7 @@ class PictureContainer extends React.Component {
   constructor() {
     super();
     this.state = {
-      photos: mockData,
+      photos: [],
       windowHeight: window.innerHeight,
       windowWidth: window.innerWidth,
       photoStyle : [
@@ -33,6 +33,7 @@ class PictureContainer extends React.Component {
     this.photoCarouselMode= this.photoCarouselMode.bind(this);
     this.updateContainers=this.updateContainers.bind(this);
     this.returnToMainPage=this.returnToMainPage.bind(this);
+    this.changePhotoCarMainPhoto=this.changePhotoCarMainPhoto.bind(this);
   }
 
   componentDidMount() {
@@ -41,6 +42,7 @@ class PictureContainer extends React.Component {
         window.alert("Error photos not found")
       } else {
         this.setState({photos : photos});
+        this.setState({currentPhoto : photos[0]});
         window.addEventListener('resize', this.windowDimensions);
         this.windowDimensions();
       }
@@ -48,7 +50,7 @@ class PictureContainer extends React.Component {
     
     
   }
-
+  //helps with dynamic rendering based on window size
   windowDimensions() {
     this.setState({
       windowWidth: window.innerWidth,
@@ -56,6 +58,8 @@ class PictureContainer extends React.Component {
     });
     this.updateContainers();
   }
+
+  //puts components into state 
   updateContainers () {
     this.setState({
       primaryPhotoContainer : <MainPicture photoCarouselMode={this.photoCarouselMode} mainPhoto={this.state.photos[0]} windowHeight={this.state.windowHeight} windowWidth={this.state.windowWidth} photoStyle={this.state.photoStyle[0]} />,
@@ -86,7 +90,9 @@ class PictureContainer extends React.Component {
         callback(err);
       },
     });
-  }
+  };
+
+  ///Methods around photoCarousel mode
   photoCarouselMode (photoID){
     this.setState({currentPhoto : this.state.photos[photoID]});
     this.setState({photoCarousel : true});
@@ -96,13 +102,35 @@ class PictureContainer extends React.Component {
     this.setState({photoCarousel : false});
     $('body').css("background-color", "fff");
   }
+  changePhotoCarMainPhoto(photoID){
+    if(photoID === '-'){
+      photoID=this.state.photos.indexOf(this.state.currentPhoto);
+      photoID--;
+    }
+
+    if(photoID < 0){
+      photoID=this.state.photos.length-1;
+    }
+    this.setState({currentPhoto : this.state.photos[photoID]});
+  }
+
+
+
+
+
+
+
+
+
+
+
   render() {
     var containerHeight = {
       height: '592px',
     };
     if(this.state.photoCarousel === true){
       return (
-        <PhotoCarousel photos={this.state.photos} returnToMainPage={this.returnToMainPage} currentPhoto={this.state.currentPhoto}/>
+        <PhotoCarousel  changePhotoCarMainPhoto={this.changePhotoCarMainPhoto} windowWidth={this.state.windowWidth} photos={this.state.photos} returnToMainPage={this.returnToMainPage} currentPhoto={this.state.currentPhoto}/>
       )
     } else {
       // 1140 px width is switch from 3pic to 5 pic

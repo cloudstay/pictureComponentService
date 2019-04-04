@@ -157,7 +157,7 @@ button:focus {
 
 
 /* Photo Carousel  */
-.exitContainer{
+.pcExitContainer{
   display: flex;
   width: 84px;
   height: 52px;
@@ -174,7 +174,7 @@ button:focus {
   filter: invert(100%);
 }
 
-.currentPhotoBox {
+.pcCurrentPhotoBox {
   display: flex;
   position: absolute;
   justify-content: center;
@@ -187,4 +187,22 @@ button:focus {
 .pcCurrentPhoto {
   display: block;
   height: 100%;
+}
+
+.pcBackButton{
+  position: absolute;
+  display: flex;
+  align-content: center;
+  left: -10;
+  top: 0;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+}
+
+.pcBackImg {
+  position: relative;
+  left: 0;
+  top: 2;
+  filter: invert(100%);
 }

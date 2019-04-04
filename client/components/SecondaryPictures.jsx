@@ -1,18 +1,28 @@
-import React from "react";
-import "../style.module.css";
+import React from 'react';
+import $ from 'jquery';
+import '../style.module.css';
 
-var SecondaryPictures = (props)=>{
+const SecondaryPictures = props => {
+  //dynamicl rendering of pictures heights
+  var photoStyle ={
+    height : '294px'
+  }
+  if (props.windowHeight >= 850) {
+    photoStyle.height = '294px';
+  } else {
+    photoStyle.height = '244px';
+  }
+  $.extend(photoStyle,props.photoStyle);
   return (
-    <div>
-      <div>
-        <input type="image" src={props.photos[1].photoURL} alt="topSecondPhoto" className="secondPics photoBorder"></input>
+    <span className="secondPics hoverHelper">
+      <div className="dualPicContainer darken">
+        <input type="image" src={props.photos[1].photoURL} alt="topSecondPhoto" style= {photoStyle} className="photoSize topPhoto photoBorder photo1" />
       </div>
-      <div>
-       <input type="image" src={props.photos[2].photoURL} alt="botSecondPhoto" className="secondPics photoBorder"></input>
-     </div>
-    </div>
-    
+      <div className="dualPicContainer darken">
+        <input type="image" src={props.photos[2].photoURL} alt="botSecondPhoto" style= {photoStyle} className="photoSize photoBorder photo2" />
+      </div>
+    </span>
   )
-}
+};
 
 export default SecondaryPictures;

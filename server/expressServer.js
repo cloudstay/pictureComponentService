@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
 const getDB = require('../database/mongoDB/getMongoDB.js');
 
 const app = express();
@@ -8,10 +7,8 @@ const app = express();
 
 const port = 3006;
 
-// app set at localhost:3006/listing/
-
-app.use('/rooms', express.static('public'));
-
+// app set at localhost:3006/rooms?id=XXX
+app.use('/rooms/', express.static('public'));
 
 // use of body parser
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -19,8 +16,6 @@ app.use(bodyParser.json());
 
 
 // get request based on room number
-
-
 app.get('/rooms/api', (req, res) => {
   getDB.getDBcollection(req.query.id, (err, photoDocuments) => {
     if (err) {
@@ -33,10 +28,11 @@ app.get('/rooms/api', (req, res) => {
   });
 });
 
+if(process.env.NODE_ENV !== 'test'){
+  app.listen(port, () => {
+    console.log(`Listening on ${port}`);
+  });
+}
 
-app.listen(port, () => {
-  console.log(`Listening on ${port}`);
-});
 
-module.exports.app=app;
-
+module.exports=app;

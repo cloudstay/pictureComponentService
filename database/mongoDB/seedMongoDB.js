@@ -59,14 +59,13 @@ function makeCollection(ListingID, callback) {
       callback(err);
     } else if (ListingID === 199 || ListingID === 899) {
       callback(null, 'complete');
-      // database.close();
     }
   });
 }
 
 function seedDoc() {
   for (let i = 100; i < 200; i += 1) {
-    makeCollection(i, (err, complete) => {
+    makeCollection(i, (err) => {
       if (err) {
         database.close();
       } else {
@@ -81,5 +80,3 @@ module.exports.schema = photoCarouselSchema;
 module.exports.mokeDocument = mokeDocument;
 module.exports.database = database;
 module.exports.makeCollection = makeCollection;
-
-

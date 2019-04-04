@@ -1,18 +1,29 @@
-import React from "react";
+import React from 'react';
+import $ from 'jquery';
+import '../style.module.css';
 
-
-var EndPictures = (props)=>{
+const EndPictures = props => {
+  var photoStyle ={
+    height : '294px'
+  }
+  if (props.windowHeight >= 850) {
+    photoStyle.height = '294px';
+    $.extend(props.photoStyle,photoStyle);
+  } else {
+    photoStyle.height = '244px';
+    $.extend(photoStyle,props.photoStyle);
+  }
+  
   return (
-    <div>
-      <div>
-        <input type="image" src={props.photo[3].photoURL} alt="mainPhoto" className="mainPicture photoBorder"></input>
+    <span className="endPics hoverHelper">
+      <div className="dualPicContainer darken">
+        <input type="image" src={props.photos[3].photoURL} alt="mainPhoto" style={photoStyle} className="photoSize topPhoto photoBorder photo3" />
       </div>
-      <div>
-       <input type="image" src={props.photo[4].photoURL} alt="mainPhoto" className="mainPicture photoBorder"></input>
-     </div>
-    </div>
-    
+      <div className="dualPicContainer darken">
+        <input type="image" src={props.photos[4].photoURL} alt="mainPhoto" style={photoStyle}  className="photoSize photoBorder photo4" />
+      </div>
+    </span>
   )
-}
+};
 
 export default EndPictures;

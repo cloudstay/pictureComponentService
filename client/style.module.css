@@ -1,21 +1,150 @@
+/* Base Container Components */
 body{
   background-color: #ffffff;
 }
 
-.mainPicture {
+.flexContainer {
+  display: flex;
+  width: 98.5%;
+  flex-wrap: nowrap;
   position: absolute;
+  overflow: hidden;
   top: 80;
-  left: 0;
-  width: 50%;
+  left: 1;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
 }
 
+
+/* Picture Components */
+
+.mainPicture {
+ flex-grow: 2;
+ width: 50%;
+ height: 590px;
+ border-right: #000000;
+ border-style: solid;
+ border-color: #000000;
+ border-width: 1px;
+ overflow: hidden;
+}
+
+.photoSize {
+  width: 100%;
+}
+
+
 .photoBorder {
-  border: 1px;
   border-style: solid;
-  border-color: #484848;
+  border-color: #000000;
+  border-width: 1px;
+}
+
+.topPhoto{
+  border-bottom: 0cm
 }
 
 .secondPics {
+  flex-grow: 1;
+  width: 24.5%;
+}
+.endPics {
+  flex-grow: 1;
+  width: 24.5%;
+}
+
+.dualPicContainer{
+  height: 50%;
+  overflow: hidden;
+}
+
+/* Photo Hover Events */
+
+.flexContainer:hover > .hoverHelper > .darken:not(:hover){
+  filter: brightness(70%);
+}
+.photo0:hover{
+  transform: scale(1.05);
+}
+
+.photo1:hover{
+  transform: scale(1.05);
+}
+.photo2:hover{
+  transform: scale(1.05);
+}
+.photo3:hover{
+  transform: scale(1.05);
+}
+.photo4:hover{
+  transform: scale(1.05);
+}
+/* MultiPic Button Components */
+
+.topButtonContainer{
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-evenly;
+  height: 36px;
+  background: #ffffff;
+  color: #484848;
+  border-radius: 4px;
+  border: none;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+}
+
+.saveButton {
+  width: 91px;
+}
+.buttonIcon {
   position: relative;
-  width: 25%;
+  top: 4px;
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  color: #484848;
+}
+.sharePic {
+  top: 3px;
+}
+
+.shareButton {
+  width: 97px;
+}
+
+.buttonWriting{
+  color: #484848;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.viewPicButton {
+  display: flex;
+  width: 113px;
+  position: absolute;
+  align-content: center;
+  justify-content: center;
+  right: 24;
+  bottom: 24;
+}
+
+/* Single Picture Buttons */
+
+.singleIconButton {
+  background-color :rgba(201, 76, 76, 0.00);
+  border: none;
+}
+.singleButtonImg{
+  filter: invert(90%);
+  width: 20px;
+  height: 20px;
 }

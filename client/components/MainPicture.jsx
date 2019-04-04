@@ -1,26 +1,38 @@
-import React from "react";
-import SecondaryPics from "./SecondaryPictures.jsx";
-import EndPics from "./EndPictures.jsx";
-import "../style.module.css";
+import React from 'react';
+import $ from 'jquery';
+import '../style.module.css';
 
+const picHeight = {
+  height: '590px',
+};
 
-var MainPicture = (props) =>{
-  if(props.mainPhoto){
-    return (
-      <span>
-        <input type="image" src={props.mainPhoto.photoURL} alt="mainPhoto" className="mainPicture photoBorder"></input>
-        <SecondaryPics photos={props.photos} />
-          {/* <EndPics photos={photos}/> */}
-      </span>
-    )
-  } else{
-    return (
-      <div>
-        I am photo
-      </div>
-    )
+const MainPicture = (props) => {
+  // render height based off of window height
+  var mainPicStyle = {
+    height: '100%',
+  };
+  if(props.windowWidth > 745){
+    if (props.windowHeight >= 850) {
+      mainPicStyle.height = '590px';
+      // props.photoState['height']='590px';
+    } else {
+      mainPicStyle.height = '552px';
+    }
   }
-}
+  $.extend(mainPicStyle, props.photoStyle);
+  if (props.mainPhoto) {
+    return (
+      <span className="mainPicture hoverHelper">
+        <input type="image" src={props.mainPhoto.photoURL} alt={props.mainPhoto.photoDescription} style={mainPicStyle} className="photoSize photo0 darken" />
+      </span>
+    );
+  }
+  return (
+    <div>
+        I am photo
+    </div>
+  );
+};
 
 
 export default MainPicture;

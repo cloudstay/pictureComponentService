@@ -6,6 +6,7 @@ import EndPics from './EndPictures.jsx';
 import TopButtonsContainer from "./TopButtonsContainer.jsx";
 import ViewPicButton from "./ViewPicButton.jsx";
 import PhotoCarousel from "./photoCarousel/PhotoCarousel.jsx";
+import mockData from "../../__mocks__/mockPhotoData.js";
 import '../style.module.css';
 
 
@@ -13,7 +14,7 @@ class PictureContainer extends React.Component {
   constructor() {
     super();
     this.state = {
-      photos: [],
+      photos: mockData,
       windowHeight: window.innerHeight,
       windowWidth: window.innerWidth,
       photoStyle : [
@@ -23,8 +24,8 @@ class PictureContainer extends React.Component {
         {},
         {}
       ],
-      photoCarousel : false,
-      currentPhoto : null,
+      photoCarousel : true,
+      currentPhoto : mockData[0],
     };
     this.setState = this.setState.bind(this);
     this.getPhotos = this.getPhotos.bind(this);
@@ -101,7 +102,7 @@ class PictureContainer extends React.Component {
     };
     if(this.state.photoCarousel === true){
       return (
-        <PhotoCarousel photos={this.state.photos} returnToMainPage={this.returnToMainPage}/>
+        <PhotoCarousel photos={this.state.photos} returnToMainPage={this.returnToMainPage} currentPhoto={this.state.currentPhoto}/>
       )
     } else {
       // 1140 px width is switch from 3pic to 5 pic

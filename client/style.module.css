@@ -2,6 +2,12 @@
 body{
   background-color: #ffffff;
 }
+input:focus {
+  outline: 0 !important;
+}
+button:focus {
+  outline: 0 !important;
+}
 
 .flexContainer {
   display: flex;
@@ -151,11 +157,6 @@ body{
 
 
 /* Photo Carousel  */
-/* .photoCarousel{
-  background-color:  #262626;
-  width: 150%;
-  height: 150%;
-} */
 .exitContainer{
   display: flex;
   width: 84px;
@@ -171,4 +172,19 @@ body{
   height: 28px;
   margin: auto;
   filter: invert(100%);
+}
+
+.currentPhotoBox {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 86;
+  height: 72%;
+  width: 100%;
+}
+
+.pcCurrentPhoto {
+  display: block;
+  height: 100%;
 }

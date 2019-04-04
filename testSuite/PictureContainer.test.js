@@ -10,7 +10,7 @@ describe('Render Picture React Base', () => {
   });
   it('should have state', () => {
     const wrapper = mount(<PictureContainer />);
-    expect(wrapper.state().photos).toBe(null);
+    expect(!!wrapper.state().photos).toBe(true);
     expect(wrapper.state().windowHeight).toBeGreaterThanOrEqual(0);
   });
   it('should render just MainPicture is width is less than 745', () => {

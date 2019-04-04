@@ -23,7 +23,7 @@ const MainPicture = (props) => {
   if (props.mainPhoto) {
     return (
       <span className="mainPicture hoverHelper">
-        <input type="image" src={props.mainPhoto.photoURL} alt={props.mainPhoto.photoDescription} style={mainPicStyle} className="photoSize photo0 darken" onClick={()=>props.photoCarouselMode()} />
+        <input onClick={()=>props.photoCarouselMode(0)} type="image" src={props.mainPhoto.photoURL} alt={props.mainPhoto.photoDescription} style={mainPicStyle} className="photoSize photo0 darken"  />
       </span>
     );
   }

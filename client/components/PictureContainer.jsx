@@ -24,6 +24,7 @@ class PictureContainer extends React.Component {
         {}
       ],
       photoCarousel : false,
+      currentPhoto : null,
     };
     this.setState = this.setState.bind(this);
     this.getPhotos = this.getPhotos.bind(this);
@@ -61,13 +62,13 @@ class PictureContainer extends React.Component {
       secondaryPhotoContainer : <SecondaryPics photoCarouselMode={this.photoCarouselMode} photos={this.state.photos} windowHeight={this.state.windowHeight} />
     })
     this.setState({
-      endPhotoContainer : <EndPics photos={this.state.photos} windowHeight={this.state.windowHeight} />
+      endPhotoContainer : <EndPics photoCarouselMode={this.photoCarouselMode} photos={this.state.photos} windowHeight={this.state.windowHeight} />
     });
     this.setState({
       topButtonsContainer : <TopButtonsContainer windowWidth={this.state.windowWidth} />
     })
     this.setState({
-      viewButtonContainer : <ViewPicButton windowHeight={this.state.windowHeight}/>
+      viewButtonContainer : <ViewPicButton photoCarouselMode={this.photoCarouselMode} windowHeight={this.state.windowHeight}/>
     });
   }
   getPhotos(callback) {
@@ -84,7 +85,9 @@ class PictureContainer extends React.Component {
       },
     });
   }
-  photoCarouselMode (){
+  photoCarouselMode (photoID){
+    console.log(photoID);
+    this.setState({currentPhoto : this.state.photos[photoID]});
     this.setState({photoCarousel : true})
   };
   render() {

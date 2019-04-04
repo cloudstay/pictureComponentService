@@ -3,7 +3,7 @@ import '../style.module.css';
 
 var ViewPicButton = (props)=>{
   return (
-    <button type="button" className="button viewPicButton buttonWriting">
+    <button onClick={()=>props.photoCarouselMode(0)} type="button" className="button viewPicButton buttonWriting">
       View Photos
     </button>
   )

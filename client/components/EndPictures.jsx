@@ -17,10 +17,10 @@ const EndPictures = props => {
   return (
     <span className="endPics hoverHelper">
       <div className="dualPicContainer darken">
-        <input type="image" src={props.photos[3].photoURL} alt="mainPhoto" style={photoStyle} className="photoSize topPhoto photoBorder photo3" />
+        <input onClick={()=>props.photoCarouselMode(3)} type="image" src={props.photos[3].photoURL} alt="mainPhoto" style={photoStyle} className="photoSize topPhoto photoBorder photo3" />
       </div>
       <div className="dualPicContainer darken">
-        <input type="image" src={props.photos[4].photoURL} alt="mainPhoto" style={photoStyle}  className="photoSize photoBorder photo4" />
+        <input onClick={()=>props.photoCarouselMode(4)} type="image" src={props.photos[4].photoURL} alt="mainPhoto" style={photoStyle}  className="photoSize photoBorder photo4" />
       </div>
     </span>
   )

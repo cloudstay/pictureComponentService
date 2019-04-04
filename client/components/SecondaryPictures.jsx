@@ -16,10 +16,10 @@ const SecondaryPictures = props => {
   return (
     <span className="secondPics hoverHelper">
       <div className="dualPicContainer darken">
-        <input type="image" src={props.photos[1].photoURL} alt="topSecondPhoto" style= {photoStyle} className="photoSize topPhoto photoBorder photo1" />
+        <input onClick={()=>props.photoCarouselMode(1)} type="image" src={props.photos[1].photoURL} alt="topSecondPhoto" style= {photoStyle} className="photoSize topPhoto photoBorder photo1" />
       </div>
       <div className="dualPicContainer darken">
-        <input type="image" src={props.photos[2].photoURL} alt="botSecondPhoto" style= {photoStyle} className="photoSize photoBorder photo2" />
+        <input onClick={()=>props.photoCarouselMode(2)} type="image" src={props.photos[2].photoURL} alt="botSecondPhoto" style= {photoStyle} className="photoSize photoBorder photo2" />
       </div>
     </span>
   )

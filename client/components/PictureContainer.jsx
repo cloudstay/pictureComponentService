@@ -6,7 +6,6 @@ import EndPics from './EndPictures.jsx';
 import TopButtonsContainer from "./TopButtonsContainer.jsx";
 import ViewPicButton from "./ViewPicButton.jsx";
 import PhotoCarousel from "./photoCarousel/PhotoCarousel.jsx";
-import mockData from "../../__mocks__/mockPhotoData.js";
 import '../style.module.css';
 
 
@@ -14,10 +13,9 @@ class PictureContainer extends React.Component {
   constructor() {
     super();
     this.state = {
-      photos: mockData,
-      windowHeight: 0,
-      windowWidth: 0,
-      displayType: 1,
+      photos: [],
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth,
       photoStyle : [
         {},
         {},
@@ -35,9 +33,17 @@ class PictureContainer extends React.Component {
   }
 
   componentDidMount() {
-    this.getPhotos();
-    this.windowDimensions();
-    window.addEventListener('resize', this.windowDimensions);
+    this.getPhotos((err,photos)=>{
+      if(err){
+        window.alert("Error photos not found")
+      } else {
+        this.setState({photos : photos});
+        window.addEventListener('resize', this.windowDimensions);
+        this.windowDimensions();
+      }
+    }); 
+    
+    
   }
 
   windowDimensions() {
@@ -64,17 +70,17 @@ class PictureContainer extends React.Component {
       viewButtonContainer : <ViewPicButton windowHeight={this.state.windowHeight}/>
     });
   }
-  getPhotos() {
+  getPhotos(callback) {
     var roomID=window.location.search.slice(4,7);
     $.ajax({
       type: 'GET',
       url: '/rooms/api',
       data: {id : roomID},
       success: (photoArray) => {
-        this.setState({ photos: JSON.parse(photoArray) });
+        callback(null, JSON.parse(photoArray) )
       },
       error: (err) => {
-        console.log(err);
+        callback(err);
       },
     });
   }

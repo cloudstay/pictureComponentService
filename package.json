@@ -23,7 +23,7 @@
     "randomPhotos": "node ./database/s3/s3seed.js",
     "seedDB": "node ./database/mongoDB/runSeedMongo.js",
     "server": "nodemon ./server/expressServer.js",
-    "test": "jest",
+    "test": " jest",
     "testWatch": "jest --watch",
     "buildwp": "webpack --config webpack.config.js"
   },

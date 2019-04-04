@@ -1,5 +1,4 @@
 const request = require("request")
-
 describe("Testing GET pathway", ()=>{
   test("Except get to return to be a string", (done)=>{
     request("http://127.0.0.1:3006/rooms/api?id=104", (err, res, body)=>{

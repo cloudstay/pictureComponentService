@@ -31,6 +31,7 @@ class PictureContainer extends React.Component {
     this.windowDimensions = this.windowDimensions.bind(this);
     this.photoCarouselMode= this.photoCarouselMode.bind(this);
     this.updateContainers=this.updateContainers.bind(this);
+    this.returnToMainPage=this.returnToMainPage.bind(this);
   }
 
   componentDidMount() {
@@ -86,17 +87,21 @@ class PictureContainer extends React.Component {
     });
   }
   photoCarouselMode (photoID){
-    console.log(photoID);
     this.setState({currentPhoto : this.state.photos[photoID]});
-    this.setState({photoCarousel : true})
+    this.setState({photoCarousel : true});
+    $('body').css("background-color", "262626");
   };
+  returnToMainPage(){
+    this.setState({photoCarousel : false});
+    $('body').css("background-color", "fff");
+  }
   render() {
     var containerHeight = {
       height: '592px',
     };
     if(this.state.photoCarousel === true){
       return (
-        <PhotoCarousel photos={this.state.photos}/>
+        <PhotoCarousel photos={this.state.photos} returnToMainPage={this.returnToMainPage}/>
       )
     } else {
       // 1140 px width is switch from 3pic to 5 pic

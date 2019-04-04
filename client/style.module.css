@@ -148,3 +148,27 @@ body{
   width: 20px;
   height: 20px;
 }
+
+
+/* Photo Carousel  */
+/* .photoCarousel{
+  background-color:  #262626;
+  width: 150%;
+  height: 150%;
+} */
+.exitContainer{
+  display: flex;
+  width: 84px;
+  height: 52px;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.pcExitButton{
+  width: 28px;
+  height: 28px;
+  margin: auto;
+  filter: invert(100%);
+}

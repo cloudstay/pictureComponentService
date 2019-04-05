@@ -1,11 +1,12 @@
 import React from "react"
+import PhotoArray from "./PhotoArray.jsx";
 import '../../style.module.css';
 
 var PhotoSlider = (props)=>{
   if(props.PhotoSlider){
     //photo carousel
     return (
-      <div className="pcSliderContainer">
+      <div>
         <div className="pcPhotoDescription">
 
         </div>
@@ -16,12 +17,17 @@ var PhotoSlider = (props)=>{
     )
   } else {
     return (
-      <div >
-        <div className="pcPhotoDescription">
-            I am description
+      <div className="pcUnderSliderContainer" >
+        <div className="pcUnderPhoto">
+            <span className="pcCurrentPhotoDescription pcText">
+              I am description
+            </span>
+            <span className="pcPhotoSliderToggler pcText">
+              <button type="submit"></button>
+            </span>
         </div>
-        <div className="pcPhotoSliderToggler">
-          I am
+        <div className="pcPhotoSliderCarousel">
+          <PhotoArray photos={props.photos} />
         </div>
       </div>
       

@@ -241,4 +241,50 @@ button:focus {
   position: absolute;
   top: 0;
   height: 100%;
+  width: 100vh;
+}
+
+.pcUnderSliderContainer{
+  position: relative;
+  left: -35.5;
+}
+.pcUnderPhoto {
+  display: flex;
+  justify-content: space-between;
+  width: 110%;
+}
+.pcText {
+  color: #fff;
+  font-size: 14px;
+  text-align: left;
+  line-height: 20.02px;
+  word-wrap: break-word;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+/* Photo Array styles */
+.pcPhotoSliderCarousel{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 110%;
+}
+.photoArrayContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  list-style-type:none;
+  overflow: hidden;
+  padding: 0;
+
+}
+
+.photoArrayList {
+  width: 100px;
+  height: 71px;
+}
+
+.photoArrayItem{
+  width: 100px;
+  height: 67px;
 }

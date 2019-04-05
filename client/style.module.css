@@ -262,6 +262,12 @@ button:focus {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
+.pcPhotoArrayButton{
+  width: 110px;
+  height: 40px;
+  background-color: transparent !important;
+  border: none;
+}
 /* Photo Array styles */
 .pcPhotoSliderCarousel{
   display: flex;
@@ -284,7 +290,9 @@ button:focus {
   height: 71px;
 }
 
+
 .photoArrayItem{
   width: 100px;
   height: 67px;
+  filter: brightness(70%);
 }

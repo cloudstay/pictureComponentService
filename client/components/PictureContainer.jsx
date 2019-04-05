@@ -14,7 +14,7 @@ class PictureContainer extends React.Component {
   constructor() {
     super();
     this.state = {
-      photos: [],
+      photos: mockData,
       windowHeight: window.innerHeight,
       windowWidth: window.innerWidth,
       photoStyle : [
@@ -40,16 +40,16 @@ class PictureContainer extends React.Component {
   }
 
   componentDidMount() {
-    this.getPhotos((err,photos)=>{
-      if(err){
-        window.alert("Error photos not found")
-      } else {
-        this.setState({photos : photos});
-        this.setState({currentPhoto : photos[0]});
-        window.addEventListener('resize', this.windowDimensions);
-        this.windowDimensions();
-      }
-    }); 
+    // this.getPhotos((err,photos)=>{
+    //   if(err){
+    //     window.alert("Error photos not found")
+    //   } else {
+    //     this.setState({photos : photos});
+    //     this.setState({currentPhoto : photos[0]});
+    //     window.addEventListener('resize', this.windowDimensions);
+    //     this.windowDimensions();
+    //   }
+    // }); 
     
     
   }

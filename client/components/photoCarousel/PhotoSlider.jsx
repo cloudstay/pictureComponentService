@@ -23,11 +23,13 @@ var PhotoSlider = (props)=>{
               {`${props.currentPhotoIndex +1}/${props.photos.length}: ${props.currentPhoto.photoDescription}`}
             </span>
             <span className="pcPhotoSliderToggler pcText">
-              <button type="submit"></button>
+              <button className="pcText pcPhotoArrayButton" type="button" >
+                Hide photo list
+              </button>
             </span>
         </div>
         <div className="pcPhotoSliderCarousel">
-          <PhotoArray photos={props.photos} />
+          <PhotoArray currentPhotoIndex={props.currentPhotoIndex} changePhotoCarMainPhoto={props.changePhotoCarMainPhoto} photos={props.photos} />
         </div>
       </div>
       

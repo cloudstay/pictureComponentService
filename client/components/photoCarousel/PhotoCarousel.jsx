@@ -22,7 +22,7 @@ var PhotoCarousel = (props) =>{
         </span>
         <div className="pcSliderContainer">
           <input onClick={()=>props.changePhotoCarMainPhoto('+')} type="image" src={props.currentPhoto.photoURL} alt={props.currentPhoto.photoDescription} className="pcCurrentPhoto" ></input>
-          <PhotoSlider photos={props.photos} currentPhoto={props.currentPhoto} showPhotoSlider={props.showPhotoSlider} toggleShowSlider={props.toggleShowSlider}/>
+          <PhotoSlider photos={props.photos} currentPhoto={props.currentPhoto} showPhotoSlider={props.showPhotoSlider} toggleShowSlider={props.toggleShowSlider} currentPhotoIndex={props.currentPhotoIndex}/>
         </div>
         <span>
           <ForwardButton changePhotoCarMainPhoto={props.changePhotoCarMainPhoto} windowWidth={props.windowWidth}/>

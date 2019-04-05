@@ -20,7 +20,7 @@ var PhotoSlider = (props)=>{
       <div className="pcUnderSliderContainer" >
         <div className="pcUnderPhoto">
             <span className="pcCurrentPhotoDescription pcText">
-              I am description
+              {`${props.currentPhotoIndex +1}/${props.photos.length}: ${props.currentPhoto.photoDescription}`}
             </span>
             <span className="pcPhotoSliderToggler pcText">
               <button type="submit"></button>

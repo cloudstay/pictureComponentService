@@ -147,7 +147,7 @@ class PictureContainer extends React.Component {
     };
     if(this.state.photoCarousel === true){
       return (
-        <PhotoCarousel  changePhotoCarMainPhoto={this.changePhotoCarMainPhoto} windowWidth={this.state.windowWidth} photos={this.state.photos} returnToMainPage={this.returnToMainPage} currentPhoto={this.state.currentPhoto} showPhotoSlider={this.state.showPhotoSlider} toggleShowSlider={this.toggleShowSlider}/>
+        <PhotoCarousel  changePhotoCarMainPhoto={this.changePhotoCarMainPhoto} windowWidth={this.state.windowWidth} photos={this.state.photos} returnToMainPage={this.returnToMainPage} currentPhoto={this.state.currentPhoto} showPhotoSlider={this.state.showPhotoSlider} toggleShowSlider={this.toggleShowSlider} currentPhotoIndex={this.state.currentPhotoIndex}/>
       )
     } else {
       // 1140 px width is switch from 3pic to 5 pic

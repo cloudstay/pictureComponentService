@@ -273,14 +273,13 @@ button:focus {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  overflow: hidden;
   width: 110%;
 }
 .photoArrayContainer {
   display: flex;
-  justify-content: space-between;
   flex-direction: row;
   list-style-type:none;
-  overflow: hidden;
   padding: 0;
 
 }
@@ -288,11 +287,12 @@ button:focus {
 .photoArrayList {
   width: 100px;
   height: 71px;
+  margin: 10px;
 }
 
 
 .photoArrayItem{
   width: 100px;
   height: 67px;
-  filter: brightness(70%);
+  filter: brightness(50%);
 }

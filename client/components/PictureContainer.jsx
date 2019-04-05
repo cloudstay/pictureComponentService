@@ -27,6 +27,7 @@ class PictureContainer extends React.Component {
       photoCarousel : true,
       currentPhoto : mockData[0],
       showPhotoSlider : false,
+      currentPhotoIndex : 0,
     };
     this.setState = this.setState.bind(this);
     this.getPhotos = this.getPhotos.bind(this);
@@ -98,6 +99,7 @@ class PictureContainer extends React.Component {
   photoCarouselMode (photoID){
     this.setState({currentPhoto : this.state.photos[photoID]});
     this.setState({photoCarousel : true});
+    this.setState({currentPhotoIndex : photoID})
     $('body').css("background-color", "262626");
   };
   returnToMainPage(){
@@ -106,20 +108,20 @@ class PictureContainer extends React.Component {
   }
   changePhotoCarMainPhoto(photoID){
     if(photoID === '-'){
-      photoID=this.state.photos.indexOf(this.state.currentPhoto);
+      photoID=this.state.currentPhotoIndex;
       photoID--;
       if(photoID < 0){
         photoID=this.state.photos.length-1;
       }
     } else if (photoID === '+'){
-      photoID=this.state.photos.indexOf(this.state.currentPhoto);
+      photoID=this.state.currentPhotoIndex;
       photoID++;
       if(photoID >= this.state.photos.length){
         photoID=0;
       }
     }
 
-    
+    this.setState({currentPhotoIndex : photoID});
     this.setState({currentPhoto : this.state.photos[photoID]});
   }
 

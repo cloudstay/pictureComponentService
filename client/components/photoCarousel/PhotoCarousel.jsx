@@ -2,6 +2,7 @@ import React from "react";
 import $ from 'jquery';
 import BackButton from "./BackButton.jsx";
 import ForwardButton from "./ForwardButton.jsx";
+import PhotoSlider from "./PhotoSlider.jsx";
 import '../../style.module.css';
 
 
@@ -25,7 +26,7 @@ var PhotoCarousel = (props) =>{
         </span>
       </div>
       <div className="pcPhotoSlider">
-
+        <PhotoSlider photos={props.photos} currentPhoto={props.currentPhoto} showPhotoSlider={props.showPhotoSlider} toggleShowSlider={props.toggleShowSlider}/>
       </div>
     </div>
   )

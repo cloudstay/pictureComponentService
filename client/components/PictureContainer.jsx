@@ -26,6 +26,7 @@ class PictureContainer extends React.Component {
       ],
       photoCarousel : true,
       currentPhoto : mockData[0],
+      showPhotoSlider : false,
     };
     this.setState = this.setState.bind(this);
     this.getPhotos = this.getPhotos.bind(this);
@@ -34,6 +35,7 @@ class PictureContainer extends React.Component {
     this.updateContainers=this.updateContainers.bind(this);
     this.returnToMainPage=this.returnToMainPage.bind(this);
     this.changePhotoCarMainPhoto=this.changePhotoCarMainPhoto.bind(this);
+    this.toggleShowSlider=this.toggleShowSlider.bind(this)
   }
 
   componentDidMount() {
@@ -121,7 +123,13 @@ class PictureContainer extends React.Component {
     this.setState({currentPhoto : this.state.photos[photoID]});
   }
 
-
+  toggleShowSlider(){
+    if(this.state.showPhotoSlider){
+      this.setState({showPhotoSlider : false})
+    } else {
+      this.setState({showPhotoSlider : true})
+    }
+  }
 
 
 
@@ -137,7 +145,7 @@ class PictureContainer extends React.Component {
     };
     if(this.state.photoCarousel === true){
       return (
-        <PhotoCarousel  changePhotoCarMainPhoto={this.changePhotoCarMainPhoto} windowWidth={this.state.windowWidth} photos={this.state.photos} returnToMainPage={this.returnToMainPage} currentPhoto={this.state.currentPhoto}/>
+        <PhotoCarousel  changePhotoCarMainPhoto={this.changePhotoCarMainPhoto} windowWidth={this.state.windowWidth} photos={this.state.photos} returnToMainPage={this.returnToMainPage} currentPhoto={this.state.currentPhoto} showPhotoSlider={this.state.showPhotoSlider} toggleShowSlider={this.toggleShowSlider}/>
       )
     } else {
       // 1140 px width is switch from 3pic to 5 pic

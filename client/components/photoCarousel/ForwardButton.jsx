@@ -12,7 +12,7 @@ var ForwardButton = (props) =>{
   }
   return (
     <button onClick={()=>props.changePhotoCarMainPhoto('+')} type="submit" className="pcButton pcForward">
-            <img className="pcForwardImg" style={fowardButtonStyle} src="./media/forwardArrow.svg" alt="https://www.freepik.com/"></img>
+            <img className="pcForwardImg" style={fowardButtonStyle} src="./media/forwardArrow.svg" alt="https://www.freepik.com/" title="From https://www.freepik.com/"></img>
     </button>
   )
 }

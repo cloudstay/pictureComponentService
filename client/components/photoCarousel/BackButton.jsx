@@ -12,7 +12,7 @@ var BackButton = (props) =>{
   }
   return (
     <button onClick={()=>props.changePhotoCarMainPhoto('-')} type="submit" className="pcButton pcBack">
-        <img className="pcBackImg" style={backButtonStyle} src="./media/backArrow.svg" alt="https://www.freepik.com/"></img>
+        <img className="pcBackImg" style={backButtonStyle} src="./media/backArrow.svg" alt="https://www.freepik.com/" title="From https://www.freepik.com/"></img>
     </button>
   )
 }

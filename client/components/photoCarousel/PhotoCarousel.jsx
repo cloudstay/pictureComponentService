@@ -12,7 +12,7 @@ var PhotoCarousel = (props) =>{
 
 
   return (
-    <div className="photoCarousel"> 
+    <div> 
       <div className="pcExitContainer">
         <input onClick={()=>{props.returnToMainPage()}} type="image" src="./media/cancel.svg" alt='https://www.flaticon.com/authors/hadrien' className="pcExitButton pcExitImg "></input>
       </div>
@@ -20,13 +20,13 @@ var PhotoCarousel = (props) =>{
         <span>
           <BackButton changePhotoCarMainPhoto={props.changePhotoCarMainPhoto} windowWidth={props.windowWidth}/>
         </span>
-        <input onClick={()=>props.changePhotoCarMainPhoto('+')} type="image" src={props.currentPhoto.photoURL} alt={props.currentPhoto.photoDescription} className="pcCurrentPhoto" ></input>
+        <div className="pcSliderContainer">
+          <input onClick={()=>props.changePhotoCarMainPhoto('+')} type="image" src={props.currentPhoto.photoURL} alt={props.currentPhoto.photoDescription} className="pcCurrentPhoto" ></input>
+          <PhotoSlider photos={props.photos} currentPhoto={props.currentPhoto} showPhotoSlider={props.showPhotoSlider} toggleShowSlider={props.toggleShowSlider}/>
+        </div>
         <span>
           <ForwardButton changePhotoCarMainPhoto={props.changePhotoCarMainPhoto} windowWidth={props.windowWidth}/>
         </span>
-      </div>
-      <div className="pcPhotoSlider">
-        <PhotoSlider photos={props.photos} currentPhoto={props.currentPhoto} showPhotoSlider={props.showPhotoSlider} toggleShowSlider={props.toggleShowSlider}/>
       </div>
     </div>
   )

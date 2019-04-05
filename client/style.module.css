@@ -159,6 +159,7 @@ button:focus {
 
 
 /* Photo Carousel  */
+
 .pcExitContainer{
   display: flex;
   width: 84px;
@@ -223,4 +224,18 @@ button:focus {
   right: 0;
   top: 2;
   filter: invert(100%);
+}
+
+.pcPhotoSlider{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.pcSliderContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 }

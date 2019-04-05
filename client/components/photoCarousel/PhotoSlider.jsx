@@ -3,12 +3,28 @@ import '../../style.module.css';
 
 var PhotoSlider = (props)=>{
   if(props.PhotoSlider){
+    //photo carousel
     return (
-      <span>I am hidden photo slider</span>
+      <div className="pcSliderContainer">
+        <div className="pcPhotoDescription">
+
+        </div>
+        <div className="pcPhotoSliderToggler">
+
+        </div>
+      </div>
     )
   } else {
     return (
-      <span>I am show photo slider</span>
+      <div >
+        <div className="pcPhotoDescription">
+            I am description
+        </div>
+        <div className="pcPhotoSliderToggler">
+          I am
+        </div>
+      </div>
+      
     )
   }
 }

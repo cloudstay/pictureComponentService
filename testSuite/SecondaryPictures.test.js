@@ -28,7 +28,7 @@ describe('Render Picture React Base', () => {
     const wrapper = mount(<SecondPics photos={mockPhotos} />);
     wrapper.setProps({windowHeight : 900});
     wrapper.update();
-    expect(wrapper.children().childAt(0).children().props().style.height).toBe('294px');
+    expect(wrapper.children().childAt(0).children().props().style.height).toBe('295px');
     wrapper.setProps({windowHeight : 500});
     wrapper.update();
     expect(wrapper.children().childAt(1).children().props().style.height).toBe('244px');

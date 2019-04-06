@@ -281,13 +281,13 @@ button:focus {
   flex-direction: row;
   list-style-type:none;
   padding: 0;
-
+  transition: -ms-transform 0.3s ease-out 0s, -webkit-transform 0.3s ease-out 0s, transform 0.3s ease-out 0s !important;
 }
 
 .photoArrayList {
   width: 100px;
   height: 71px;
-  margin: 10px;
+  margin-left: 10px;
 }
 
 

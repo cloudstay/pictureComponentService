@@ -1,5 +1,6 @@
 import React from "react"
 import PhotoArray from "./PhotoArray.jsx";
+import $ from "jquery";
 import '../../style.module.css';
 
 var PhotoSlider = (props)=>{
@@ -29,7 +30,7 @@ var PhotoSlider = (props)=>{
             </span>
         </div>
         <div className="pcPhotoSliderCarousel">
-          <PhotoArray currentPhotoIndex={props.currentPhotoIndex} changePhotoCarMainPhoto={props.changePhotoCarMainPhoto} photos={props.photos} />
+          <PhotoArray sliderWidth={$(".pcPhotoSliderCarousel").width()} currentPhotoIndex={props.currentPhotoIndex} changePhotoCarMainPhoto={props.changePhotoCarMainPhoto} photos={props.photos} />
         </div>
       </div>
       

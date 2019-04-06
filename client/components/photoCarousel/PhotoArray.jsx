@@ -17,10 +17,10 @@ var PhotoArray = (props) => {
   }
   if(props.currentPhotoIndex < 3){
     translateX.transform = `translateX(0px)`
-  } else if (props.currentPhotoIndex >= 3 && props.currentPhotoIndex <= props.photos.length-3){
+  } else if (props.currentPhotoIndex >= 3 && 110*(props.photos.length-props.currentPhotoIndex+1) > Math.floor(props.sliderWidth/100)*100 ){
     translateX.transform =`translateX(${-110*(props.currentPhotoIndex-2)}px)`
-  } else if(props.currentPhotoIndex > props.photos.length-3) {
-    translateX.transform =`translateX(${-110*(props.photos.length-5)}px)`
+  } else {
+    translateX.transform =`translateX(${Math.floor(-110*(props.photos.length-Math.floor(props.sliderWidth/100))/100)*100}px)`;
   }
   return (
     <ul className="photoArrayContainer pcUnderPhoto " style={translateX}>

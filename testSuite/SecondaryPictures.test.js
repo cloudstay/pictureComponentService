@@ -26,10 +26,10 @@ describe('Render Picture React Base', () => {
   });
   it('with photos prop should  render with size change', () => {
     const wrapper = mount(<SecondPics photos={mockPhotos} />);
-    wrapper.setProps({windowHeight : 900});
+    wrapper.setProps({ windowHeight: 900 });
     wrapper.update();
     expect(wrapper.children().childAt(0).children().props().style.height).toBe('295px');
-    wrapper.setProps({windowHeight : 500});
+    wrapper.setProps({ windowHeight: 500 });
     wrapper.update();
     expect(wrapper.children().childAt(1).children().props().style.height).toBe('244px');
   });

@@ -4,10 +4,10 @@ import '../style.module.css';
 
 const EndPictures = props => {
   var photoStyle ={
-    height : '294px'
+    height : '295px'
   }
   if (props.windowHeight >= 850) {
-    photoStyle.height = '294px';
+    photoStyle.height = '295px';
     $.extend(props.photoStyle,photoStyle);
   } else {
     photoStyle.height = '244px';

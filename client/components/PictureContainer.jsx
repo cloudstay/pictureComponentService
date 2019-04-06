@@ -24,7 +24,7 @@ class PictureContainer extends React.Component {
         {},
         {}
       ],
-      photoCarousel : true,
+      photoCarousel : false,
       currentPhoto : mockData[0],
       showPhotoSlider : true,
       currentPhotoIndex : 0,

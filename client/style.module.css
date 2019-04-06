@@ -20,7 +20,7 @@ button:focus {
   top: 80;
   left: 1;
   border-style: solid;
-  border-color: #000000;
+  border-color: #484848;
   border-width: 1px;
 }
 
@@ -31,9 +31,9 @@ button:focus {
  flex-grow: 2;
  width: 50%;
  height: 590px;
- border-right: #000000;
+ border-right: #484848;
  border-style: solid;
- border-color: #000000;
+ border-color: #484848;
  border-width: 1px;
  overflow: hidden;
 }
@@ -46,7 +46,7 @@ button:focus {
 
 .photoBorder {
   border-style: solid;
-  border-color: #000000;
+  border-color: #484848;
   border-width: 1px;
 }
 

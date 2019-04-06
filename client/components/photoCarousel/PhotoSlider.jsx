@@ -4,14 +4,22 @@ import $ from "jquery";
 import '../../style.module.css';
 
 var PhotoSlider = (props)=>{
+  var photoSliderYTranslation= {
+    transform: 'translateY(67px)'
+  }
+  if(props.showPhotoSlider){
+    photoSliderYTranslation.transform='translateY(0px)'
+  }else {
+    photoSliderYTranslation.transform= 'translateY(67px)'
+  }
     return (
-      <div className="pcUnderSliderContainer" >
+      <div className="pcUnderSliderContainer"  onMouseEnter={()=>{props.toggleShowSlider(false)}} style={photoSliderYTranslation}>
         <div className="pcUnderPhoto">
             <span className="pcCurrentPhotoDescription pcText">
               {`${props.currentPhotoIndex +1}/${props.photos.length}: ${props.currentPhoto.photoDescription}`}
             </span>
             <span className="pcPhotoSliderToggler pcText">
-              <button onClick={()=>{props.toggleShowSlider()}} className="pcText pcPhotoArrayButton" type="button" >
+              <button onClick={()=>{props.toggleShowSlider(props.showPhotoSlider)}} className="pcText pcPhotoArrayButton" type="button" >
                 {props.showPhotoSlider ? 
                   <div className="pcPhotoToggleContainer">
                     <div className="pcText">Hide photo list</div>

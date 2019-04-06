@@ -247,6 +247,7 @@ button:focus {
 .pcUnderSliderContainer{
   position: relative;
   left: -35.5;
+  transition: -ms-transform 0.2s ease-out 0s, -webkit-transform 0.2s ease-out 0s, transform 0.2s ease-out 0s !important;
 }
 .pcUnderPhoto {
   display: flex;

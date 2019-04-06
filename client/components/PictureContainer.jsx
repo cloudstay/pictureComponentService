@@ -125,8 +125,9 @@ class PictureContainer extends React.Component {
     this.setState({currentPhoto : this.state.photos[photoID]});
   }
 
-  toggleShowSlider(){
-    if(this.state.showPhotoSlider){
+  toggleShowSlider(showPhotoSlider){
+    console.log(showPhotoSlider)
+    if(showPhotoSlider){
       this.setState({showPhotoSlider : false})
     } else {
       this.setState({showPhotoSlider : true})

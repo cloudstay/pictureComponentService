@@ -261,7 +261,18 @@ button:focus {
   word-wrap: break-word;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
+.pcPhotoToggleContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 110px;
+}
+.pcPhotoToggleImg{
+  width: 10px;
+  height: 10px;
+  filter: invert(100%);
 
+}
 .pcPhotoArrayButton{
   width: 110px;
   height: 40px;
@@ -280,6 +291,7 @@ button:focus {
   display: flex;
   flex-direction: row;
   list-style-type:none;
+  justify-content: flex-start;
   padding: 0;
   transition: -ms-transform 0.3s ease-out 0s, -webkit-transform 0.3s ease-out 0s, transform 0.3s ease-out 0s !important;
 }

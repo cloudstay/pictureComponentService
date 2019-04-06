@@ -26,7 +26,7 @@ class PictureContainer extends React.Component {
       ],
       photoCarousel : true,
       currentPhoto : mockData[0],
-      showPhotoSlider : false,
+      showPhotoSlider : true,
       currentPhotoIndex : 0,
     };
     this.setState = this.setState.bind(this);

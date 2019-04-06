@@ -126,7 +126,6 @@ class PictureContainer extends React.Component {
   }
 
   toggleShowSlider(showPhotoSlider){
-    console.log(showPhotoSlider)
     if(showPhotoSlider){
       this.setState({showPhotoSlider : false})
     } else {

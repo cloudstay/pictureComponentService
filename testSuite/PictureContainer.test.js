@@ -72,7 +72,6 @@ describe('Render Picture React Base', () => {
     wrapper.setState({ photoCarousel : true });
     wrapper.setProps({ currentPhoto : mockPhotos[0]});
     wrapper.update();
-    console.log(wrapper.props());
     expect(wrapper.childAt(0).name()).toBe('PhotoCarousel');
   });
   it('should render MainPicture/SecondaryPics/ EndPics is width is greater than 1130', () => {

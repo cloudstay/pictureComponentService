@@ -29,7 +29,6 @@ describe('Render Picture React Base', () => {
   });
   it('Should pass down key props to PhotoSlider ', () => {
     const wrapper = mount(<PhotoCarousel currentPhoto={mockPhotos[0]} photos={mockPhotos}/>);
-    console.log(Object.keys(wrapper.children().childAt(1).childAt(1).childAt(1).props()))
     expect(Object.keys(wrapper.children().childAt(1).childAt(1).childAt(1).props())).toEqual([ 'changePhotoCarMainPhoto',
     'photos',
     'currentPhoto',

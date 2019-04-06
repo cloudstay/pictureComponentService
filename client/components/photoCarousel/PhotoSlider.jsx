@@ -12,6 +12,7 @@ var PhotoSlider = (props)=>{
   }else {
     photoSliderYTranslation.transform= 'translateY(67px)'
   }
+
     return (
       <div className="pcUnderSliderContainer"  onMouseEnter={()=>{props.toggleShowSlider(false)}} style={photoSliderYTranslation}>
         <div className="pcUnderPhoto">
@@ -33,10 +34,9 @@ var PhotoSlider = (props)=>{
               </button>
             </span>
         </div>
-        {props.showPhotoSlider ? 
-        <div className="pcPhotoSliderCarousel">
+        <div className="pcPhotoSliderCarousel" style={props.showPhotoSlider ? {display : 'flex'} :{display : 'none'}  }>
           <PhotoArray sliderWidth={$(".pcPhotoSliderCarousel").width()} currentPhotoIndex={props.currentPhotoIndex} changePhotoCarMainPhoto={props.changePhotoCarMainPhoto} photos={props.photos} />
-        </div> :  <div></div>}
+        </div>
       </div>
     )
 }

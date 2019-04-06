@@ -240,8 +240,8 @@ button:focus {
   align-content: center;
   position: absolute;
   top: 0;
-  height: 100%;
-  width: 100vh;
+  height: 73vh;
+  width: 93vh;
 }
 
 .pcUnderSliderContainer{

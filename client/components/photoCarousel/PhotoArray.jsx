@@ -15,12 +15,15 @@ var PhotoArray = (props) => {
   var translateX= {
     transform: `translateX(0px)`
   }
+  var endShiftPictureOffset= 2+ Math.floor((props.sliderWidth-500)/110);
   if(props.currentPhotoIndex < 3){
     translateX.transform = `translateX(0px)`
-  } else if (props.currentPhotoIndex >= 3 && 110*(props.photos.length-props.currentPhotoIndex+1) > Math.floor(props.sliderWidth/100)*100 ){
+  } else if (props.currentPhotoIndex >= 3 && props.photos.length - props.currentPhotoIndex > endShiftPictureOffset ) {
+    // if(props.sliderWidth > 660)
+    // && 110*(props.photos.length-props.currentPhotoIndex+1) > Math.floor(props.sliderWidth/100)*100 
     translateX.transform =`translateX(${-110*(props.currentPhotoIndex-2)}px)`
   } else {
-    translateX.transform =`translateX(${Math.floor(-110*(props.photos.length-Math.floor(props.sliderWidth/100))/100)*100}px)`;
+    translateX.transform =`translateX(${-110*(props.photos.length-endShiftPictureOffset-2)}px)`
   }
   return (
     <ul className="photoArrayContainer pcUnderPhoto " style={translateX}>

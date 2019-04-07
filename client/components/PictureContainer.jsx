@@ -148,7 +148,7 @@ class PictureContainer extends React.Component {
       // 1140 px width is switch from 3pic to 5 pic
       // 750 px width is from 1 pic to 3 pics
       // 5 pic layout
-      if (this.state.windowWidth > 1130 && this.state.photos.length >= 4) {
+      if (this.state.windowWidth > 1130 && this.state.photos.length > 4) {
         if (this.state.windowHeight < 700) {
           containerHeight.height = '294.66px';
         } else if (this.state.windowHeight < 850) {
@@ -166,7 +166,7 @@ class PictureContainer extends React.Component {
           </div>
         );
         // 3 picture laoyout
-      } else if (this.state.windowWidth > 745 && this.state.photos.length >= 2) {
+      } else if (this.state.windowWidth > 745 && this.state.photos.length > 2) {
         if (this.state.windowHeight < 700) {
           containerHeight.height = '294.60px';
         } else if (this.state.windowHeight < 850) {

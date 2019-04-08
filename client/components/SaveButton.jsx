@@ -7,7 +7,7 @@ const SaveButton = (props) => {
     return (
       <button type="button" className="saveButton button">
         <span>
-          <img src="./media/heart.svg" className="buttonIcon" />
+          <img src="./svg/heart.svg" className="buttonIcon" />
         </span>
         <span className="buttonWriting">
             Save
@@ -17,7 +17,7 @@ const SaveButton = (props) => {
   }
   return (
     <button type="button" className="singleIconButton">
-      <img src="./media/heart.svg" className="singleButtonImg" />
+      <img src="./svg/heart.svg" className="singleButtonImg" />
     </button>
   );
 };

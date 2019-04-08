@@ -7,7 +7,7 @@ const ShareButton = (props) => {
     return (
       <button type="button" className="shareButton button">
         <span>
-          <img src="./media/share.svg" className="buttonIcon sharePic" />
+          <img src="./svg/share.svg" className="buttonIcon sharePic" />
         </span>
         <span className="buttonWriting">
           Share
@@ -17,7 +17,7 @@ const ShareButton = (props) => {
   }
   return (
     <button type="button" className="singleIconButton">
-      <img src="./media/share.svg" className="singleButtonImg" />
+      <img src="./svg/share.svg" className="singleButtonImg" />
     </button>
   );
 };

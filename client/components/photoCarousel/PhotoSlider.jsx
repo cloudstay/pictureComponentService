@@ -25,13 +25,13 @@ const PhotoSlider = (props) => {
               ? (
                 <div className="pcPhotoToggleContainer">
                   <div className="pcText">Hide photo list</div>
-                  <img className="pcPhotoToggleImg" src="./media/sort-down.svg" alt="https://www.flaticon.com/authors/dave-gandy" />
+                  <img className="pcPhotoToggleImg" src="./svg/sort-down.svg" alt="https://www.flaticon.com/authors/dave-gandy" />
                 </div>
               )
               : (
                 <div className="pcPhotoToggleContainer">
                   <div className="pcText">Show photo list</div>
-                  <img className="pcPhotoToggleImg" src="./media/sort-up.svg" alt="https://www.flaticon.com/authors/dave-gandy" />
+                  <img className="pcPhotoToggleImg" src="./svg/sort-up.svg" alt="https://www.flaticon.com/authors/dave-gandy" />
                 </div>
               )}
           </button>

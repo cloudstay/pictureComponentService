@@ -1,13 +1,13 @@
-# Project Name
+# CloudStay
 
-> Project description
+> An house sharing front end web app that allows connection of people looking for temperary housing with those with spare rooms.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/cloudstay/apartment-component-service
+  - https://github.com/cloudstay/anthonysServiceModules
+  - https://github.com/cloudstay/BookingModuleService
+  - https://github.com/cloudstay/reviewComponentService
 
 ## Table of Contents
 
@@ -18,10 +18,13 @@
 ## Usage
 
 > Some usage instructions
-
+-System is set up on localhost:3006 for this component
+-Photos are seeded on S3, but to seed own photos run 
+  -npm run randomPhotos
+  -Take photos from media folder to s3 bucket
+  -run npm run seedDB with change to bucket location
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
 - etc
@@ -33,7 +36,10 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 From within the root directory:
 
 ```sh
-npm install -g webpack
 npm install
+npm run seedDB
+npm run buildwb
+npm run server
+Open page on localhost:3006/rooms/?id=${roomnumber}
 ```
 

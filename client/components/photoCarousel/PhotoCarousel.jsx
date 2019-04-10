@@ -14,7 +14,7 @@ const PhotoCarousel = (props) => {
   return (
     <div>
       <div className="pcExitContainer">
-        <input onClick={() => { props.returnToMainPage(); }} type="image" src="./svg/cancel.svg" alt="https://www.flaticon.com/authors/hadrien" className="pcExitButton pcExitImg " />
+        <input onClick={() => { props.returnToMainPage(); }} type="image" src="https://s3-us-west-1.amazonaws.com/staycloudphotobucket/svg/cancel.svg" alt="https://www.flaticon.com/authors/hadrien" className="pcExitButton pcExitImg " />
       </div>
       <div className="pcCurrentPhotoBox">
         <span>

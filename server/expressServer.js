@@ -5,10 +5,15 @@ const getDB = require('../database/mongoDB/getMongoDB.js');
 const app = express();
 
 
-const port = 3006;
+const port = process.env.PORT || 3006;
+
+app.use((req, res, next) => {
+  console.log(`now serving ${req.method} request at ${req.url}`)
+  next();
+})
 
 // app set at localhost:3006/rooms?id=XXX
-app.use('/rooms/', express.static('public'));
+app.use('/rooms/:id', express.static('public'));
 
 // use of body parser
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -16,8 +21,8 @@ app.use(bodyParser.json());
 
 
 // get request based on room number
-app.get('/rooms/api', (req, res) => {
-  getDB.getDBcollection(req.query.id, (err, photoDocuments) => {
+app.get('/api/rooms/:id/photos', (req, res) => {
+  getDB.getDBcollection(req.params.id, (err, photoDocuments) => {
     if (err) {
       res.status(404);
       res.end();

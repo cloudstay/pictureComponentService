@@ -25,8 +25,8 @@
     "server": "nodemon ./server/expressServer.js",
     "test": " jest",
     "testWatch": "jest --watch",
-    "buildwp": "webpack --config webpack.config.js",
-    "start" : "nodemon ./server/expressServer.js"
+    "build": "webpack --config webpack.config.js --watch",
+    "start": "nodemon ./server/expressServer.js"
   },
   "dependencies": {
     "babel-core": "^7.0.0-bridge.0",

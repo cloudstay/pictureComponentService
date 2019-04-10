@@ -2,7 +2,6 @@
 body{
   background-color: #ffffff;
   margin: 0;
-  min-width: 600px !important;
 }
 input:focus {
   outline: 0 !important;
@@ -13,12 +12,12 @@ button:focus {
 
 .flexContainer {
   display: flex;
-  width: 98.5%;
+  width: 99.5%;
   flex-wrap: nowrap;
-  position: absolute;
+  position: relative;
   overflow: hidden;
-  top: 80;
-  left: 1;
+  top: 80px;
+  left: 1px;
   border-style: solid;
   border-color: #484848;
   border-width: 1px;
@@ -100,7 +99,7 @@ button:focus {
   top: 24px;
 }
 
-.button {
+.photobutton {
   display: flex;
   justify-content: space-evenly;
   height: 36px;
@@ -142,8 +141,8 @@ button:focus {
   position: absolute;
   align-content: center;
   justify-content: center;
-  right: 24;
-  bottom: 24;
+  right: 24px;
+  bottom: 24px;
 }
 
 /* Single Picture Buttons */
@@ -167,14 +166,14 @@ button:focus {
   height: 52px;
   flex-wrap: nowrap;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0px;
+  right: 0px;
 }
 
 .pcExitButton{
   position: relative;
   width: 28px;
-  top:5;
+  top:5px;
   height: 28px;
   margin: auto;
   filter: invert(100%);
@@ -185,7 +184,7 @@ button:focus {
   position: absolute;
   justify-content: center;
   align-items: center;
-  top: 86;
+  top: 86px;
   height: 72%;
   width: 100%;
 }
@@ -199,7 +198,7 @@ button:focus {
   position: absolute;
   display: flex;
   align-content: center;
-  top: -8;
+  top: -8px;
   height: 100%;
   background-color: transparent;
   border: none;
@@ -207,29 +206,29 @@ button:focus {
 
 /* Build off of .pcButton */
 .pcBack{
-  left: 0;
+  left: 0px;
 }
 .pcForward {
-  right: 0;
+  right: 0px;
 }
 
 .pcBackImg {
   position: relative;
-  left: 0;
-  top: 2;
+  left: 0px;
+  top: 2px;
   filter: invert(100%);
 }
 
 .pcForwardImg {
   position: relative;
-  right: 0;
-  top: 2;
+  right: 0px;
+  top: 2px;
   filter: invert(100%);
 }
 
 .pcPhotoSlider{
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   width: 100%;
 }
 
@@ -239,14 +238,14 @@ button:focus {
   flex-direction: column;
   align-content: center;
   position: absolute;
-  top: 0;
+  top: 0px;
   height: 73vh;
   width: 93vh;
 }
 
 .pcUnderSliderContainer{
   position: relative;
-  left: -35.5;
+  left: -35.5px;
   transition: -ms-transform 0.2s ease-out 0s, -webkit-transform 0.2s ease-out 0s, transform 0.2s ease-out 0s !important;
 }
 .pcUnderPhoto {
@@ -293,7 +292,7 @@ button:focus {
   flex-direction: row;
   list-style-type:none;
   justify-content: flex-start;
-  padding: 0;
+  padding: 0px;
   transition: -ms-transform 0.3s ease-out 0s, -webkit-transform 0.3s ease-out 0s, transform 0.3s ease-out 0s !important;
 }
 

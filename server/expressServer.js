@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const getDB = require('../database/mongoDB/getMongoDB.js');
+const mockData= require("../__mocks__/mockPhotoData.js");
 
 const app = express();
 

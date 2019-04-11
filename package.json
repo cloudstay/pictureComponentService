@@ -21,7 +21,7 @@
   "scripts": {
     "linter": "npx eslint . --fix",
     "randomPhotos": "node ./database/s3/s3seed.js",
-    "seedDB": "node ./database/mongoDB/runSeedMongo.js",
+    "seed": "node ./database/mongoDB/runSeedMongo.js",
     "server": "nodemon ./server/expressServer.js",
     "test": " jest",
     "testWatch": "jest --watch",

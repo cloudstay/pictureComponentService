@@ -1,0 +1,16 @@
+version: "3.0"
+
+services:
+  piccont:
+    build: ../
+    depends_on:
+      - 'mongo'
+    ports:
+      - '3006:3006'
+  seed:
+    build: ../
+    depends_on:
+      - 'mongo'
+    command: sh -c 'npm run seed'
+  mongo:
+    image: mongo:latest

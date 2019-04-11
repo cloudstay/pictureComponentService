@@ -3,7 +3,7 @@ const photoCarouselSchema = require('./seedMongoDB.js');
 
 
 function getCollection(ListingID, callback) {
-  mongooose.connect('mongodb://127.0.0.1:27017/photoCarousel');
+  mongooose.connect('mongodb://mongo/photoCarousel');
   const ListingCollection = mongooose.model(`listing${ListingID}photo`, photoCarouselSchema.schema);
   ListingCollection.find({}, (err, listingDocuments) => {
     if (err) {

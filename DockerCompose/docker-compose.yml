@@ -2,15 +2,15 @@ version: "3.0"
 
 services:
   piccont:
-    image: 102323493267.dkr.ecr.us-west-1.amazonaws.com/cloudstaypicv1:latest
+    build: ../
     depends_on:
-      - 'mongo'
+      - 'cloudstaypicdb'
     ports:
-      - '3006:3006'
+      - '80:3006'
   seed:
-    image: 102323493267.dkr.ecr.us-west-1.amazonaws.com/cloudstaypicv1:latest
+    build: ../
     depends_on:
-      - 'mongo'
+      - 'cloudstaypicdb'
     command: sh -c 'npm run seed'
-  mongo:
+  cloudstaypicdb:
     image: mongo:latest

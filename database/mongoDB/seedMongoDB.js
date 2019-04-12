@@ -1,7 +1,7 @@
 const mongooose = require('mongoose');
 const faker = require('faker');
 
-mongooose.connect('mongodb://mongo/photoCarousel');
+mongooose.connect('mongodb://cloudstaypicdb/photoCarousel');
 const database = mongooose.connection;
 
 const photoCarouselSchema = new mongooose.Schema({

@@ -2,25 +2,24 @@ import React from 'react';
 import '../style.module.css';
 
 
-var ShareButton = (props) =>{
-  if(props.windowWidth > 745 ){
+const ShareButton = (props) => {
+  if (props.windowWidth > 745) {
     return (
       <button type="button" className="shareButton button">
         <span>
-          <img src="./media/share.svg" className="buttonIcon sharePic"></img>
+          <img src="./svg/share.svg" className="buttonIcon sharePic" />
         </span>
         <span className="buttonWriting">
           Share
         </span>
       </button>
-    )
-  } else {
-    return (
-      <button type="button" className="singleIconButton">
-        <img src="./media/share.svg" className="singleButtonImg"></img>
-      </button>
-    )
+    );
   }
-}
+  return (
+    <button type="button" className="singleIconButton">
+      <img src="./svg/share.svg" className="singleButtonImg" />
+    </button>
+  );
+};
 
 export default ShareButton;

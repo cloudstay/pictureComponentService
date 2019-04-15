@@ -2,26 +2,24 @@ import React from 'react';
 import '../style.module.css';
 
 
-var SaveButton = (props) =>{
-  if(props.windowWidth > 745 ){
+const SaveButton = (props) => {
+  if (props.windowWidth > 745) {
     return (
       <button type="button" className="saveButton button">
-          <span>
-          <img src="./media/heart.svg" className="buttonIcon"></img>
-          </span>
-          <span className="buttonWriting">
+        <span>
+          <img src="./svg/heart.svg" className="buttonIcon" />
+        </span>
+        <span className="buttonWriting">
             Save
-          </span>
+        </span>
       </button>
-    )
-  } else {
-    return (
-      <button type="button" className="singleIconButton">
-        <img src="./media/heart.svg" className="singleButtonImg"></img>
-      </button>
-    )
+    );
   }
-  
-}
+  return (
+    <button type="button" className="singleIconButton">
+      <img src="./svg/heart.svg" className="singleButtonImg" />
+    </button>
+  );
+};
 
 export default SaveButton;

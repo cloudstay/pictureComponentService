@@ -1,5 +1,6 @@
-var mongooose = require("mongoose");
+const mongooose = require('mongoose');
 const seedMongo = require('../database/mongoDB/seedMongoDB.js');
+
 mongooose.connect('mongodb://127.0.0.1:27017/photoCarousel');
 const database = mongooose.connection;
 
@@ -24,12 +25,10 @@ test('Expect photoURL roomID to be less than 200 and more than 99', () => {
 
 
 test('Expect Database to make new Listing', (done) => {
-  var ListingCollection = mongooose.model(`listing899photo`, seedMongo.schema);
-  ListingCollection.collection.drop({}, ()=>{
-    seedMongo.makeCollection(899, ()=>{
+  const ListingCollection = mongooose.model('listing899photo', seedMongo.schema);
+  ListingCollection.collection.drop({}, () => {
+    seedMongo.makeCollection(899, () => {
       done();
-    }) 
-  })
+    });
+  });
 });
-
-

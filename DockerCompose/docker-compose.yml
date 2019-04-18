@@ -2,13 +2,13 @@ version: "3.0"
 
 services:
   piccont:
-    build: ../
+    image: suco3693/cloudstaypicimg:version2
     depends_on:
       - 'cloudstaypicdb'
     ports:
       - '80:3006'
-  seed:
-    build: ../
+  pic-seed:
+    image: suco3693/cloudstaypicimg:version2
     depends_on:
       - 'cloudstaypicdb'
     command: sh -c 'npm run seed'
